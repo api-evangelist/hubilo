@@ -1,0 +1,14 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/hubilo-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: Access Token issued to the organiser, sent in the Authorization header as a Bearer
+    token.
+  sources:
+  - openapi/hubilo-openapi.yml
