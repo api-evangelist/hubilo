@@ -1,0 +1,358 @@
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public Event Session API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+security:
+- bearerAuth: []
+tags:
+- name: Session
+paths:
+  /api/{apiVersion}/integration/session/track/upsert:
+    post:
+      operationId: addUpdateTrackForSessions
+      summary: Add/Update Track for Sessions
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add-Track Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  hubiloTrackId: 2970
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 10987
+              operationType: CREATE
+              agendaTrackDate: '2020-09-12'
+              name: Session Track
+              colorCode: '#fffff'
+  /api/{apiVersion}/integration/session/upsert:
+    post:
+      operationId: addUpdateSession
+      summary: Add/Update Session
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add-Session Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  hubiloSessionId: 23211
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 9551
+              operationType: CREATE
+              name: Session 1
+              startTimeMilli: '1631206800000'
+              endTimeMilli: '1631210400000'
+              clientSessionSpeakers: []
+              hubiloSessionSpeakers:
+              - '2954'
+              - '7845'
+              trackId: '2970'
+              description: Hello description
+  /api/{apiVersion}/integration/analytics/session/session-info:
+    get:
+      operationId: listSessions
+      summary: List Sessions
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - agendaId: 24624
+                    organiserId: 345575
+                    agendaName: 'session one '
+                    agendaDate: '2021-10-12T00:00:00.000Z'
+                    agendaDescription: ''
+                    startTimeMilli: '1634058900000'
+                    endTimeMilli: '1634061600000'
+                    banner: http://domain.com/sessionbanner/345575/4629_6332_814988001639487417.png
+                    multipleFile:
+                    - https://domain.com/brochure/345575/dedd8770-8028-11ec-b6ce-567998577cf7_1643367356775.xlsx
+                    startTime: '2021-10-12 17:15:00'
+                    endTime: '2021-10-12 18:00:00'
+                    speakers:
+                    - speakerId: 13950
+                      name: speaker name
+                      profileImage: ''
+                    - speakerId: 13951
+                      name: speaker name
+                      profileImage: ''
+                    - speakerId: 13952
+                      name: speaker name
+                      profileImage: http://domain.com/speaker/345575/150/4391_8181_146763001639489064.png
+                  - agendaId: 24779
+                    organiserId: 345575
+                    agendaName: Session Name
+                    agendaDate: '2021-10-12T00:00:00.000Z'
+                    agendaDescription: ''
+                    startTimeMilli: '1634059800000'
+                    endTimeMilli: '1634061600000'
+                    banner: ''
+                    multipleFile: []
+                    startTime: '2021-10-12 17:30:00'
+                    endTime: '2021-10-12 18:00:00'
+                    speakers: []
+                  currentpage: 1
+                  totalPages: 1
+                  count: 2
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/analytics/session/register:
+    get:
+      operationId: listSessionRegistrations
+      summary: List Session Registrations
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - status: REJECTED
+                    userId: 6135g3634b7505431474d9c6
+                    firstName: firstname
+                    lastName: lastname
+                    designation: designation
+                    organisation: organization name
+                    phone: '9999999999'
+                    email: email@domain.com
+                    city: Heklo
+                    state: Huambo
+                    country: Angola
+                    about: write about yourself
+                    website: https://www.your_website_name.com
+                    facebookLink: https://www.facebook.com
+                    twitterLink: https://www.twitter/com
+                    linkedInLink: https://www.linkedin.com
+                    instagramLink: https://www.instagram.com
+                    memberGroups:
+                    - ATTENDEE
+                  - status: PENDING
+                    firstName: firstname
+                    lastName: lastname
+                    designation: ''
+                    organisation: ''
+                    phone: ''
+                    email: email@domain.com
+                    city: Gangtok
+                    state: Sikkim
+                    country: India
+                    about: write about yourself
+                    facebookLink: https://www.facebook.com
+                    twitterLink: https://www.twitter/com
+                    linkedInLink: https://www.linkedin.com
+                    instagramLink: https://www.instagram.com
+                    memberGroups:
+                    - ATTENDEE
+                    - BOOTH MEMBER
+                  currentPage: 1
+                  count: 2
+                  totalPages: 1
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/analytics/session/attendee:
+    get:
+      operationId: listSessionAttendanceDetails
+      summary: List Session Attendance Details
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/session/delete:
+    post:
+      operationId: delistSession
+      summary: Delist Session
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data: {}
+                message: Deleting Session
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 41321
+              hubiloSessionId:
+              - '37626'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer token.

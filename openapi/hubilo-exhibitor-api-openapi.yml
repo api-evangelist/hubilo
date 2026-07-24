@@ -1,0 +1,419 @@
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public Event Exhibitor API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+security:
+- bearerAuth: []
+tags:
+- name: Exhibitor
+paths:
+  /api/{apiVersion}/integration/booth/category/list:
+    get:
+      operationId: exhibitorBoothCategory
+      summary: Exhibitor Booth Category
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - Bike
+                  - Mobile
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/booth/list:
+    get:
+      operationId: exhibitorBooths
+      summary: Exhibitor Booths
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - hubiloExhibitorId: 437135
+                    clientExhibitorId: ''
+                    name: booth name
+                    email: email@domain.com
+                    phone: +91-99999-99999
+                    logo: 3368_5694_739577001631194493.png
+                    description: This booth is created for new joinee
+                    website: https://your_website_name.com
+                    address: South korea
+                    facebook: https://facebook.com
+                    linkedin: https://linkedIn.com
+                    twitter: https://twitter.com
+                    instagram: https://instagram.com
+                    profileImg: https://domain.com/exhibitor/345139/300/3368_5694_739577001631194493.png
+                    spotlightBannerType: VIDEO
+                    spotlightBanner:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                    brochure: https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998507cf7_1697268570506.xlsx
+                    multipleFile:
+                    - https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998577cf7_1697268570506.xlsx
+                    listBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/2988_6468_190827001697268436.png
+                    smallBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/3474_9247_385889001697268455.png
+                    boothSize: LARGE
+                  - hubiloExhibitorId: 437137
+                    clientExhibitorId: ''
+                    name: Booth A Updated
+                    email: team@domain.com
+                    phone: +91-99999-99999
+                    logo: 4397_7629_842335001697268420.png
+                    description: Please add description here
+                    website: https://your_website_name.com
+                    address: Port Blair, Andaman and Nicobar Islands
+                    facebook: https://facebook.com
+                    linkedin: https://linkedin.com
+                    twitter: https://twitter.com
+                    instagram: https://instagram.com
+                    profileImg: https://domain.com/exhibitor/345139/300/4397_7629_842335001697268420.png
+                    spotlightBannerType: VIDEO
+                    spotlightBanner:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                    brochure: https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998507cf7_1697268570506.xlsx
+                    multipleFile:
+                    - https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998577cf7_1697268570506.xlsx
+                    listBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/2988_6468_190827001697268436.png
+                    smallBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/3474_9247_385889001697268455.png
+                    boothSize: MEDIUM
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/booth/analytics:
+    get:
+      operationId: boothAnaltyics
+      summary: Booth Analtyics
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - gender: ''
+                    phone: ''
+                    city: ''
+                    state: ''
+                    country: India
+                    instagramLink: ''
+                    firstName: John
+                    lastName: Sharma
+                    email: john@sample.com
+                    about: About sample
+                    website: ''
+                    phoneCode: ''
+                    jobTitle: SDE
+                    organisationName: Hubilo
+                    facebookLink: ''
+                    linkedinLink: ''
+                    twitterLink: ''
+                    userId: 6513bd830a5b8a32wwewewe
+                    group:
+                    - Attendee
+                    source: Login Page
+                    file: https://fileurl.com/brochure/2801467/0fe0daa0-04a3-aka-8b5e-932avcd36bc7e_1742375884106.xlsx
+                    downloadedAt: '2025-03-21 11:16:40'
+                    fileName: 1742370427665.xlsx
+                  totalCount: 5
+                  currentPage: 0
+                  limit: 1
+                message: ''
+                flag: 0
+                event_last_updated_at: 0
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '429':
+          description: Too many requests — rate limit exceeded (20 req/s per organizer)
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/booth/add:
+    post:
+      operationId: addVirtualExhibitorBooth
+      summary: Add Virtual Exhibitor Booth
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  hubiloExhibitorId: 434097
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Sorry, Some parameter are missing. Please enter all required values.
+                flag: 0
+                eventLastUpdatedAt: 0
+        '500':
+          description: Something went wrong
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Something went wrong. Please try again.
+                flag: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: "{\n    \"eventId\": 10987,\n    \"clientExhibitorId\": \"\",\n    \"name\": \"How to Integrate Vision and Strategic Planning\",\n    \"category\": \"category name\",\n    \"boothSize\": \"MEDIUM\",\n    \"description\": \"Please put description\",\n    \"address\": \"Tawang\",\n    \"email\": \"email@domain.com\",\n    \"phone\": \"9999999999\",\n    \"website\": \"https://www.your_website_name.com\",\n    \"instagram\": \"https://www.instagram.com\",\n    \"facebook\": \"https://www.facebook.com\",\n    \"linkedin\": \"https://www.linkedin.com\",\n    \"twitter\": \"https://www.twitter.com\",\n    \"tags\": [\"tag1\", \"tag1\"]\n}"
+  /api/{apiVersion}/integration/booth/update:
+    post:
+      operationId: updateExhibitorBooth
+      summary: Update Exhibitor Booth
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data: Updated Successfully
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Please pass either hubiloExhibitorId or clientExhibitorId
+                flag: 0
+                eventLastUpdatedAt: 0
+        '500':
+          description: Something went wrong
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Something went wrong. Please try again.
+                flag: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: "{\n    \"eventId\": 10987,\n    \"hubiloExhibitorId\": \"437135\",\n    \"name\": \"Booth A\",\n    \"category\": \"category name\",\n    \"boothSize\": \"MEDIUM\",\n    \"description\": \"Please add description here\",\n    \"address\": \"Greater London City of London\",\n    \"email\": \"email@domain.com\",\n    \"phone\": \"+91-99999-99999\",\n    \"website\": \"https://your_website_name.com\",\n    \"instagram\": \"https://instagram.com\",\n    \"facebook\": \"https://facebook.com\",\n    \"linkedin\": \"https://linkedin.com\",\n    \"twitter\": \"https://twitter.com\",\n    \"tags\": [\n        \"tag1\",\n        \"tag2\"\n    ]\n}"
+  /api/{apiVersion}/integration/booth/delete:
+    post:
+      operationId: delistExhibitorBooth
+      summary: Delist Exhibitor Booth
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                message: Deleting Booth
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 11938
+              hubiloExhibitorId:
+              - '437401'
+              - '437397'
+              - '437400'
+              - '437402'
+  /api/{apiVersion}/integration/booth/member/delete:
+    post:
+      operationId: removeBoothMember
+      summary: Remove Booth Member
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                message: Deleting Booth memeber from booth
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 34457
+              email:
+              - ashu@hub.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer token.

@@ -1,0 +1,123 @@
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public Event Upload Media API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+security:
+- bearerAuth: []
+tags:
+- name: Upload Media
+paths:
+  /api/{apiVersion}/integration/media/get-signed-url:
+    post:
+      operationId: getPreSignedUrl
+      summary: Get Pre-Signed URL
+      tags:
+      - Upload Media
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - uploadURL: https://v2qat-virtualevent-cdn.s3.ap-south-1.amazonaws.com/profile/c3d93a80-8e3f-11ec-a0e2-9bf53438fcb0_1644916506152.png?Content-Type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVUCLUIVSEZNVQYVV%2F20220215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220215T091506Z&X-Amz-Expires=300&X-Amz-Signature=655a895cd05c743930dccaccad230027c7a60d41870951b7abb3ee3874c30c3b&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read
+                    fileName: c3d93a80-8e3f-11ec-a0e2-9bf53438fcb0_1644916506152.png
+                    height: 200
+                    width: 200
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: '11861'
+              organiserId: '345575'
+              uploadType: PROFILE
+              contentType: image/png
+              extension: png
+  /api/{apiVersion}/integration/media/set-acknowledgement:
+    post:
+      operationId: uploadMediaAcknowledgment
+      summary: Upload Media Acknowledgment
+      tags:
+      - Upload Media
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data: {}
+                message: Acknowledgement Successful”
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              fileName: a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png
+              organiserId: '345575'
+              uploadType: PROFILE
+              email: email@domain.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer token.

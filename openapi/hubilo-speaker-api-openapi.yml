@@ -1,0 +1,174 @@
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public Event Speaker API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+security:
+- bearerAuth: []
+tags:
+- name: Speaker
+paths:
+  /api/{apiVersion}/integration/speaker/upsert:
+    post:
+      operationId: addUpdateSpeaker
+      summary: Add/Update Speaker
+      tags:
+      - Speaker
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add Speaker Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  speakerId: 13803
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '429':
+          description: Too many requests — rate limit exceeded (20 req/s per organizer)
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: '3713'
+              operationType: CREATE
+              firstName: firstname
+              lastName: lastname
+              email: email@domain.com
+              phone: '9999999999'
+              city: Kochi
+              state: Kerala
+              country: India
+              company: company name
+              title: designation name
+              memberGroupId:
+              - 5ff59327d9f03b050f41bb06
+              facebookUrl: www.facebook.com/
+              twitterUrl: www.twitter.com/
+              profileImageURL: ''
+              whatsappNumber: '7777777777'
+              linkedinUrl: www.linkedin.com/
+              instagramUrl: www.instagram.com/
+  /api/{apiVersion}/integration/speaker/list:
+    get:
+      operationId: listSpeakers
+      summary: List Speakers
+      tags:
+      - Speaker
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - hubiloSpeakerId: 24220
+                    clientSpeakerId: ''
+                    speakerName: Hyb P
+                    email: hybspekkk@uih.com
+                    fbUrl: www.facebook.com/
+                    linkedinUrl: www.linkedin.com/
+                    twitterUrl: www.twitter.com/
+                    instagramUrl: www.instagram.com/
+                    profileImg: ''
+                    shortDescription: ''
+                    longDescription: ''
+                    multipleFile: ''
+                    presentation: ''
+                    presentationFileName: ''
+                    createTimeMilli: '1644219963000'
+                    updateTimeMilli: '1644220015000'
+                    updatedAt: '2022-02-07T07:46:03.000Z'
+                    createdAt: '2022-02-07T07:46:03.000Z'
+                    eventId: 34970
+                    isRating: 0
+                    categoryId: null
+                    categoryName: ''
+                    sessionDetails: []
+                  - hubiloSpeakerId: 24340
+                    clientSpeakerId: '1234'
+                    speakerName: firstname lastname
+                    email: email@domain.com
+                    fbUrl: www.facebook.com/
+                    linkedinUrl: www.linkedin.com/
+                    twitterUrl: www.twitter.com/
+                    instagramUrl: www.instagram.com/
+                    profileImg: ''
+                    shortDescription: ''
+                    longDescription: ''
+                    multipleFile: ''
+                    presentation: ''
+                    presentationFileName: ''
+                    createTimeMilli: '1644228432086'
+                    updateTimeMilli: '1644228432086'
+                    updatedAt: '2022-02-07T10:07:12.000Z'
+                    createdAt: '2022-02-07T10:07:12.000Z'
+                    eventId: 34970
+                    isRating: 0
+                    categoryId: null
+                    categoryName: ''
+                    sessionDetails: []
+                    customFieldData:
+                    - id: 625697d6d9f03b1ee55ef1b7
+                      name: ''
+                      value: additonal field
+                      type: ''
+                    group:
+                    - groupName: Speaker
+                      groupId: 80d2e3344b75054121615c31
+                      groupType: ''
+                    attendanceType: on-site
+                    qrCode: asf765fa57656g5a765g7as
+                  currentPage: 0
+                  totalPages: 1
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '429':
+          description: Too many requests — rate limit exceeded (20 req/s per organizer)
+        '500':
+          description: Internal server error
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer token.

@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public Event Organiser API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+security:
+- bearerAuth: []
+tags:
+- name: Organiser
+paths:
+  /api/{apiVersion}/integration/organiser/profile:
+    get:
+      operationId: organiserProfile
+      summary: Organiser Profile
+      tags:
+      - Organiser
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                    id: 613a02ad2cdf8e773635e87a
+                    designation: Student
+                    phone: '9999999999'
+                    phoneCode: '+91'
+                    organisationName: organization name
+                    email: email+1@domain.com
+                    firstName: firstname
+                    lastName: lastname
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer token.

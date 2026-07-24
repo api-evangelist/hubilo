@@ -1,0 +1,215 @@
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public Event API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+security:
+- bearerAuth: []
+tags:
+- name: Event
+paths:
+  /api/{apiVersion}/integration/event/list:
+    get:
+      operationId: listEvents
+      summary: List Events
+      tags:
+      - Event
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - id: 10988
+                    name: Hiring and Promoting Tomorrow’s Leaders
+                    description: This event is for student
+                    organiserId: 381866
+                    startTimeMilli: '1631527200000'
+                    endTimeMilli: '1631786400000'
+                    createTimeMilli: '1631513272000'
+                    favicon: ''
+                    communityBanner: []
+                    eventLogo: []
+                    loginBanner:
+                    - http://domain.com/banner/community_login_banner/381866/1120/4863_5693_078750001642751711.png
+                    welcomeVideo:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                      isHomeScreen: 0
+                      isShowAfterLogin: 0
+                      thumb: ''
+                      title: welcome video title
+                      description: short description of welcome video
+                  - id: 10987
+                    name: Integration
+                    description: <p>Its about Integration of an Marketing services</p>
+                    organiserId: 381866
+                    startTimeMilli: '1631192760000'
+                    endTimeMilli: '1631365560000'
+                    createTimeMilli: '1631192750000'
+                    favicon: ''
+                    communityBanner:
+                    - https://domain.com/banner/community_banner/381866/1036/4932_8094_574639001643782558.png
+                    eventLogo:
+                    - https://domain.com/logo/381866/300/3126_5621_095509001643782546.jpeg
+                    loginBanner: []
+                    welcomeVideo: []
+                  currentPage: 0
+                  totalPages: 1
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/event/detail:
+    get:
+      operationId: eventDetails
+      summary: Event Details
+      tags:
+      - Event
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                    id: 10987
+                    organiserId: 381866
+                    name: Integration
+                    startTimeMilli: '1631192760000'
+                    endTimeMilli: '1631365560000'
+                    description: <p>Its about Integration of an Marketing services</p>
+                    commonPhoneCode: '+91'
+                    commonPhoneCodeCountry: '+91'
+                    isEventOnline: 1
+                    locationId: null
+                    address: Darjeeling, West Bengal
+                    city: Darjeeling
+                    state: West Bengal
+                    country: India
+                    pincode: '386245'
+                    lat: '27.0410'
+                    lng: '88.2663'
+                    favicon: http://domain.com/favicon/381866/32/1665_9046_143971001643964401.png
+                    communityBanner:
+                    - http://domain.com/banner/community_banner/381866/1036/4764_6288_797856065442751663.png
+                    eventLogo:
+                    - http://domain.com/logo/381866/300/3979_7107_782769001642787476.jpeg
+                    - http://domain.com/logo/381866/300/4528_8590_464604001084751691.jpeg
+                    loginBanner:
+                    - http://domain.com/banner/community_login_banner/381866/1120/4863_5693_078750001642751711.png
+                    welcomeVideo:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                      isHomeScreen: 0
+                      isShowAfterLogin: 0
+                      thumb: ''
+                      title: welcome video title
+                      description: short description of welcome video
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/event/delete:
+    post:
+      operationId: removeEvent
+      summary: Remove Event
+      tags:
+      - Event
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data: Event Deleted
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 3713
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer token.
