@@ -1,0 +1,1887 @@
+# generated: '2026-07-19'
+# method: generated
+# source: https://developer.hubilo.com/ (Postman collection documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)
+openapi: 3.0.3
+info:
+  title: Hubilo (Virtual PRO) Public API
+  version: '1.2'
+  description: 'Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events:
+    events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile,
+    and media upload. Derived faithfully from the provider''s published Postman collection (Virtual Pro
+    Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).'
+  contact:
+    name: Hubilo Developer Support
+    url: https://developer.hubilo.com/
+  x-apievangelist-source: 'https://developer.hubilo.com/ (Postman: documenter.gw.postman.com/view/18768923/2s8Z72Uqz4)'
+servers:
+- url: https://api.hubilo.com
+  description: Production API host (Postman {{endpoint}}); paths carry an /api/{apiVersion} prefix.
+tags:
+- name: Event
+- name: Exhibitor
+- name: Organiser
+- name: Session
+- name: Speaker
+- name: Upload Media
+- name: User
+security:
+- bearerAuth: []
+paths:
+  /api/{apiVersion}/integration/booth/category/list:
+    get:
+      operationId: exhibitorBoothCategory
+      summary: Exhibitor Booth Category
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - Bike
+                  - Mobile
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/booth/list:
+    get:
+      operationId: exhibitorBooths
+      summary: Exhibitor Booths
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - hubiloExhibitorId: 437135
+                    clientExhibitorId: ''
+                    name: booth name
+                    email: email@domain.com
+                    phone: +91-99999-99999
+                    logo: 3368_5694_739577001631194493.png
+                    description: This booth is created for new joinee
+                    website: https://your_website_name.com
+                    address: South korea
+                    facebook: https://facebook.com
+                    linkedin: https://linkedIn.com
+                    twitter: https://twitter.com
+                    instagram: https://instagram.com
+                    profileImg: https://domain.com/exhibitor/345139/300/3368_5694_739577001631194493.png
+                    spotlightBannerType: VIDEO
+                    spotlightBanner:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                    brochure: https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998507cf7_1697268570506.xlsx
+                    multipleFile:
+                    - https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998577cf7_1697268570506.xlsx
+                    listBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/2988_6468_190827001697268436.png
+                    smallBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/3474_9247_385889001697268455.png
+                    boothSize: LARGE
+                  - hubiloExhibitorId: 437137
+                    clientExhibitorId: ''
+                    name: Booth A Updated
+                    email: team@domain.com
+                    phone: +91-99999-99999
+                    logo: 4397_7629_842335001697268420.png
+                    description: Please add description here
+                    website: https://your_website_name.com
+                    address: Port Blair, Andaman and Nicobar Islands
+                    facebook: https://facebook.com
+                    linkedin: https://linkedin.com
+                    twitter: https://twitter.com
+                    instagram: https://instagram.com
+                    profileImg: https://domain.com/exhibitor/345139/300/4397_7629_842335001697268420.png
+                    spotlightBannerType: VIDEO
+                    spotlightBanner:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                    brochure: https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998507cf7_1697268570506.xlsx
+                    multipleFile:
+                    - https://domain.com/brochure/345139/b24e2ea0-802b-11ec-b6ce-898998577cf7_1697268570506.xlsx
+                    listBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/2988_6468_190827001697268436.png
+                    smallBannerImage: https://domain.com/banner/exhibitor_list_banner_image/345139/1036/3474_9247_385889001697268455.png
+                    boothSize: MEDIUM
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/booth/analytics:
+    get:
+      operationId: boothAnaltyics
+      summary: Booth Analtyics
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - gender: ''
+                    phone: ''
+                    city: ''
+                    state: ''
+                    country: India
+                    instagramLink: ''
+                    firstName: John
+                    lastName: Sharma
+                    email: john@sample.com
+                    about: About sample
+                    website: ''
+                    phoneCode: ''
+                    jobTitle: SDE
+                    organisationName: Hubilo
+                    facebookLink: ''
+                    linkedinLink: ''
+                    twitterLink: ''
+                    userId: 6513bd830a5b8a32wwewewe
+                    group:
+                    - Attendee
+                    source: Login Page
+                    file: https://fileurl.com/brochure/2801467/0fe0daa0-04a3-aka-8b5e-932avcd36bc7e_1742375884106.xlsx
+                    downloadedAt: '2025-03-21 11:16:40'
+                    fileName: 1742370427665.xlsx
+                  totalCount: 5
+                  currentPage: 0
+                  limit: 1
+                message: ''
+                flag: 0
+                event_last_updated_at: 0
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '429':
+          description: Too many requests — rate limit exceeded (20 req/s per organizer)
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/booth/add:
+    post:
+      operationId: addVirtualExhibitorBooth
+      summary: Add Virtual Exhibitor Booth
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  hubiloExhibitorId: 434097
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Sorry, Some parameter are missing. Please enter all required values.
+                flag: 0
+                eventLastUpdatedAt: 0
+        '500':
+          description: Something went wrong
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Something went wrong. Please try again.
+                flag: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: "{\n    \"eventId\": 10987,\n    \"clientExhibitorId\": \"\",\n    \"name\": \"How\
+              \ to Integrate Vision and Strategic Planning\",\n    \"category\": \"category name\",\n\
+              \    \"boothSize\": \"MEDIUM\",\n    \"description\": \"Please put description\",\n    \"\
+              address\": \"Tawang\",\n    \"email\": \"email@domain.com\",\n    \"phone\": \"9999999999\"\
+              ,\n    \"website\": \"https://www.your_website_name.com\",\n    \"instagram\": \"https://www.instagram.com\"\
+              ,\n    \"facebook\": \"https://www.facebook.com\",\n    \"linkedin\": \"https://www.linkedin.com\"\
+              ,\n    \"twitter\": \"https://www.twitter.com\",\n    \"tags\": [\"tag1\", \"tag1\"]\n}"
+  /api/{apiVersion}/integration/booth/update:
+    post:
+      operationId: updateExhibitorBooth
+      summary: Update Exhibitor Booth
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data: Updated Successfully
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Please pass either hubiloExhibitorId or clientExhibitorId
+                flag: 0
+                eventLastUpdatedAt: 0
+        '500':
+          description: Something went wrong
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Something went wrong. Please try again.
+                flag: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: "{\n    \"eventId\": 10987,\n    \"hubiloExhibitorId\": \"437135\",\n    \"name\"\
+              : \"Booth A\",\n    \"category\": \"category name\",\n    \"boothSize\": \"MEDIUM\",\n \
+              \   \"description\": \"Please add description here\",\n    \"address\": \"Greater London\
+              \ City of London\",\n    \"email\": \"email@domain.com\",\n    \"phone\": \"+91-99999-99999\"\
+              ,\n    \"website\": \"https://your_website_name.com\",\n    \"instagram\": \"https://instagram.com\"\
+              ,\n    \"facebook\": \"https://facebook.com\",\n    \"linkedin\": \"https://linkedin.com\"\
+              ,\n    \"twitter\": \"https://twitter.com\",\n    \"tags\": [\n        \"tag1\",\n     \
+              \   \"tag2\"\n    ]\n}"
+  /api/{apiVersion}/integration/booth/delete:
+    post:
+      operationId: delistExhibitorBooth
+      summary: Delist Exhibitor Booth
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                message: Deleting Booth
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 11938
+              hubiloExhibitorId:
+              - '437401'
+              - '437397'
+              - '437400'
+              - '437402'
+  /api/{apiVersion}/integration/booth/member/delete:
+    post:
+      operationId: removeBoothMember
+      summary: Remove Booth Member
+      tags:
+      - Exhibitor
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                message: Deleting Booth memeber from booth
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 34457
+              email:
+              - ashu@hub.com
+  /api/{apiVersion}/integration/user/list:
+    get:
+      operationId: listUsers
+      summary: List Users
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - paginatedResults:
+                    - id: 613b88d869a5b20467b1a1f0
+                      userId: 613b88d869a5b20467b1a1ef
+                      eventId: 10987
+                      createdAt: '2021-09-10T16:33:28.463Z'
+                      updatedAt: '2021-09-10T16:33:28.463Z'
+                      groups:
+                      - groupName: Attendee
+                        groupId: 60d2e3364b75054121615c32
+                        groupType: ''
+                      firstName: firstname
+                      lastName: ' lastname'
+                      email: ' firstname@domain.com'
+                      about: I'm Developer
+                      phoneCode: '+91'
+                      phone: '9999999999'
+                      profilePictures:
+                        orignal: 2888_5921_212327001642659425.png
+                        thumb: 2888_5921_212327001642659425.png
+                      organisationName: organization name
+                      designation: Software Developer
+                      city: London
+                      state: ' Sovereign state'
+                      country: United Kingdom
+                      customFieldData:
+                      - id: 625697d6d9f03b1ee55ef1b7
+                        value: ''
+                        name: additonal field
+                        type: checkbox
+                      organiserId: 381866
+                      profilePictureURL: http://domain.com/profile/2888_5921_212327001642659425.png
+                      loginMagicLink: https://domain.com/session-live/invite/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsSTTzMkBkb21haW4uY29tIiwiX2lkIjoiNjE5ZjdlY2VkM2U1MWE0NzExNTFlOWI2IiwiYXBpX2tleSI6ImYwNDI2ZTgyYWI3NzQyNjg2MWYxYjY5YzJjNDAxNDc4IiwiZXZlbnRfaWQiOjExNDYxLCJ1c2VyX2lkIjoiMzUwMTgyIiwibG9jYWxDcmVhdGVkKKLiOjE2Mzg4NzI2MTM2OTMwMDAsImlhdCI6MTYzODg3MjYxM30.JLRJCI5kGyALWLewv9J61ZnVxebcMzyE7xDqdCFFJOk
+                    - id: 613b547a69a5b20467b1a1ed
+                      userId: 613b547a69a5b20467b1a1ec
+                      eventId: 10987
+                      createdAt: '2021-09-10T12:50:02.388Z'
+                      updatedAt: '2021-09-10T12:50:02.388Z'
+                      groups:
+                      - groupName: Attendee
+                        groupId: 60d2e3364b75054121615c32
+                        groupType: ''
+                      - groupName: Default
+                        groupId: 6177ece44b7505411d507a46
+                        groupType: ''
+                      firstName: firstname
+                      lastName: lastname
+                      email: ' email@domain.com'
+                      about: I'm Designer
+                      phoneCode: ''
+                      phone: ' 9999999999'
+                      profilePictures:
+                        orignal: 2888_5921_212327001642659425.png
+                        thumb: 2888_5921_212327001642659425.png
+                      organisationName: organization name
+                      designation: designation
+                      city: Tawang
+                      state: Arunachal Pradesh
+                      country: India
+                      customFieldData:
+                      - id: 625697d6d9f03b1ee55ef1b7
+                        value: ''
+                        name: additonal field
+                        type: checkbox
+                      organiserId: 381866
+                      profilePictureURL: http://domain.com/profile/2888_5921_212327001642659425.png
+                      loginMagicLink: https://domain.com/session-live/invite/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVtYWlsSTTzMkBkb21haW4uY29tIiwiX2lkIjoiNjE5ZjdlY2VkM2U1MWE0NzExNTFlOWI2IiwiYXBpX2tleSI6ImYwNDI2ZTgyYWI3NzQyNjg2MWYxYjY5YzJjNDAxNDc4IiwiZXZlbnRfaWQiOjExNDYxLCJ1c2VyX2lkIjoiMzUwMTgyIiwibG9jYWxDcmVhdGVkKKLiOjE2Mzg4NzI2MTM2OTMwMDAsImlhdCI6MTYzODg3MjYxM30.JLRJCI5kGyALWLewv9J61ZnVxebcMzyE7xDqdCFFJOk
+                    totalCount:
+                    - count: 2
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/user/add:
+    post:
+      operationId: addUser
+      summary: Add User
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add Exhibitor Team Member Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data: User Created!
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Please pass correct exhibitorid. The exhibitorid passed doesn't exist for the
+                  event
+                flag: 0
+                eventLastUpdatedAt: 0
+        '500':
+          description: Something went wrong
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Something went wrong. Please try again.
+                flag: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: "{\n    \"eventId\": 10128,\n    // \"clientExhibitorId\": \"EXH-11\",\n    \"hubiloExhibitorId\"\
+              : \"434095\",\n    \"firstName\": \"firstname\",\n    \"lastName\": \"lastname\",\n    \"\
+              email\": \"email@domain.com\",\n    \"password\": \"\",\n    \"phoneCode\": \"91\",\n  \
+              \  \"phone\": \"9999999999\",\n    \"gender\": \"Male\",\n    \"about\": \"Write about yourself\"\
+              ,\n    \"organisation\": \"organization\",\n    \"designation\": \"designation\",\n    \"\
+              country\": \"India\",\n    \"state\": \"Goa\",\n    \"city\": \"Mapusa and Goa Velha\",\n\
+              \    \"website\": \"https://your_website_name.com\",\n    \"interest\": [\n        \"Hiking\"\
+              ,\n        \"Investing\",\n        \"Digital Marketing\"\n    ],\n    \"memberGroupId\"\
+              : [\n        \"60d2e3364b75054121615c32\",\n        \"60d2e3364b75054121615c33\"\n    ],\
+              \ \n    \"industry\": \"Banking\",\n    \"lookingFor\": \"Web development\",\n    \"offering\"\
+              : \"Design\",\n    \"customFieldData\": {\n        \"60a5bd844b7505412046259a\": \"Hello\"\
+              ,\n        \"60a5bd9172b75054867sd9sd\": [\n            \"Mr.\",\n            \"random\"\
+              \n        ]\n    },\n    \"isSendInviteeMail\": \"YES\"\n}"
+  /api/{apiVersion}/integration/user/update:
+    post:
+      operationId: updateUser
+      summary: Update User
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Update Exhibitor Team Member Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data: Profile updated !
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Please pass either hubiloexhibitorid or clientexhibitorid
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example: "{\n    \"eventId\": 10128,\n    \"hubiloExhibitorId\": \"434095\",\n    \"firstName\"\
+              : \"firstname\",\n    \"lastName\": \"lastname\",\n    \"email\": \"email@domain.com\",\n\
+              \    \"password\": \"\",\n    \"phoneCode\": \"91\",\n    \"phone\": \"9999999999\",\n \
+              \   \"gender\": \"Male\",\n    \"about\": \"write about yourself here\",\n    \"organisation\"\
+              : \"organization name\",\n    \"designation\": \"designation\",\n    \"country\": \"India\"\
+              ,\n    \"state\": \"Gujarat\",\n    \"city\": \"Ahmedabad\",\n    \"website\": \"https://your_website_name.com\"\
+              ,\n    \"memberGroupId\": [\n        \"60d2e3364b75054121615c32\"\n    ], \n     \"interest\"\
+              : [\n        \"Hiking\",\n        \"Investment\"\n    ],\n    \"industry\": \"Banking\"\
+              ,\n    \"lookingFor\": \"Web development\",\n    \"offering\": \"Deisgn\",\n    \"customFieldData\"\
+              : {\n        \"60a5bd844b7505412046259a\": \"Hello\",\n        \"60a5bd9172b75054867sd9sd\"\
+              : [\n            \"Mr.\",\n            \"random\"\n        ]\n    }\n}\n"
+  /api/{apiVersion}/integration/user/delete:
+    post:
+      operationId: deregisterUser
+      summary: Deregister User
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                message: Deleting people
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 34457
+              emails:
+              - ashu@hub.com
+              - aman@hub.com
+              - kislay@hub.com
+  /api/{apiVersion}/integration/user/membergroup/list:
+    get:
+      operationId: listMemberGroups
+      summary: List Member Groups
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - id: 61c42189301652467e47dc19
+                    name: Attendee
+                    isMain: 'YES'
+                    isDefault: 'YES'
+                    isOnboarding: 'YES'
+                    isCustom: 'NO'
+                    type: ATTENDEE
+                    functionalitySettings:
+                    - id: 243776
+                      communityFunctionalityTypeId: 7
+                      isEnable: 1
+                      name: On Boarding
+                    - id: 243777
+                      communityFunctionalityTypeId: 13
+                      isEnable: 1
+                      name: Create Post
+                    - id: 243778
+                      communityFunctionalityTypeId: 14
+                      isEnable: 1
+                      name: Create Poll
+                    - id: 243779
+                      communityFunctionalityTypeId: 15
+                      isEnable: 1
+                      name: Vote Poll
+                    - id: 243780
+                      communityFunctionalityTypeId: 16
+                      isEnable: 1
+                      name: Comment Post
+                    - id: 243781
+                      communityFunctionalityTypeId: 35
+                      isEnable: 1
+                      name: Create Photo Posts
+                    - id: 243782
+                      communityFunctionalityTypeId: 36
+                      isEnable: 1
+                      name: Create Videos Posts
+                    - id: 243783
+                      communityFunctionalityTypeId: 37
+                      isEnable: 1
+                      name: Create Introduction Posts
+                  - id: 61c42189301652467e47dc1a
+                    name: Speaker
+                    isMain: 'YES'
+                    isDefault: 'NO'
+                    isOnboarding: 'YES'
+                    isCustom: 'NO'
+                    type: SPEAKER
+                  - id: 61c42189301652467e47dc1b
+                    name: Booth Member
+                    isMain: 'YES'
+                    isDefault: 'NO'
+                    isOnboarding: 'YES'
+                    isCustom: 'NO'
+                    type: BOOTHMEMBER
+                  - id: 61ea508c51004a112972e197
+                    isDefault: 'NO'
+                    isMain: 'NO'
+                    isOnboarding: 'YES'
+                    type: ATTENDEE
+                    name: sswvv
+                  - id: 61ea50cc95261b114c0a918b
+                    isDefault: 'NO'
+                    isMain: 'NO'
+                    isOnboarding: 'YES'
+                    type: ATTENDEE
+                    name: wwrc
+                  functionalityType:
+                  - id: 7
+                    name: On Boarding
+                  - id: 13
+                    name: Create Post
+                  - id: 14
+                    name: Create Poll
+                  - id: 15
+                    name: Vote Poll
+                  - id: 16
+                    name: Comment Post
+                  - id: 35
+                    name: Create Photo Posts
+                  - id: 36
+                    name: Create Videos Posts
+                  - id: 37
+                    name: Create Introduction Posts
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/user/membergroup/create:
+    post:
+      operationId: addMemberGroup
+      summary: Add Member Group
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  groupId: 61f8f95ee1ae7a3e93bedf57
+                  type: ATTENDEE
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 11974
+              name: with qa
+  /api/{apiVersion}/integration/user/customfieldstructure:
+    get:
+      operationId: customFieldsOfUsers
+      summary: Custom Fields of Users
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - id: 614076df4b7505411474d9e8
+                    fieldName: Employee ID
+                    fieldType: Text
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/user/matchmaking/list:
+    get:
+      operationId: listOfMatchmakingFields
+      summary: List of Matchmaking Fields
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - Accountant
+                  - Admin
+                  - Agency
+                  - Analyst
+                  - Consultant
+                  - Investors
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: Please pass type from LOOKINGFOR,OFFERING,INDUSTRY,INTEREST
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/user/deleted/list:
+    get:
+      operationId: listDeletedUsers
+      summary: List Deleted Users
+      tags:
+      - User
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  total: 1
+                  currentPage: 0
+                  limit: 100
+                  users:
+                  - id: 688c6dd812c663779cba62f7
+                    userId: 642140f9943104591a285145
+                    email: subhankar.nandi@hubilo.com
+                    firstName: Subhankar
+                    lastName: Nandi
+                    profileStatus: DELETED
+                    isActive: 0
+                    updatedAt: '2026-06-04T16:12:16.387Z'
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              example:
+                status: 400
+                message: eventId is required
+                flag: 1
+        '401':
+          description: Invalid Access
+          content:
+            application/json:
+              example:
+                status: 401
+                message: Invalid access token
+                flag: 1
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests
+                flag: 1
+        '500':
+          description: Something went wrong
+          content:
+            application/json:
+              example:
+                status: 500
+                message: Something went wrong
+                flag: 1
+  /api/{apiVersion}/integration/speaker/upsert:
+    post:
+      operationId: addUpdateSpeaker
+      summary: Add/Update Speaker
+      tags:
+      - Speaker
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add Speaker Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  speakerId: 13803
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '429':
+          description: Too many requests — rate limit exceeded (20 req/s per organizer)
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: '3713'
+              operationType: CREATE
+              firstName: firstname
+              lastName: lastname
+              email: email@domain.com
+              phone: '9999999999'
+              city: Kochi
+              state: Kerala
+              country: India
+              company: company name
+              title: designation name
+              memberGroupId:
+              - 5ff59327d9f03b050f41bb06
+              facebookUrl: www.facebook.com/
+              twitterUrl: www.twitter.com/
+              profileImageURL: ''
+              whatsappNumber: '7777777777'
+              linkedinUrl: www.linkedin.com/
+              instagramUrl: www.instagram.com/
+  /api/{apiVersion}/integration/speaker/list:
+    get:
+      operationId: listSpeakers
+      summary: List Speakers
+      tags:
+      - Speaker
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - hubiloSpeakerId: 24220
+                    clientSpeakerId: ''
+                    speakerName: Hyb P
+                    email: hybspekkk@uih.com
+                    fbUrl: www.facebook.com/
+                    linkedinUrl: www.linkedin.com/
+                    twitterUrl: www.twitter.com/
+                    instagramUrl: www.instagram.com/
+                    profileImg: ''
+                    shortDescription: ''
+                    longDescription: ''
+                    multipleFile: ''
+                    presentation: ''
+                    presentationFileName: ''
+                    createTimeMilli: '1644219963000'
+                    updateTimeMilli: '1644220015000'
+                    updatedAt: '2022-02-07T07:46:03.000Z'
+                    createdAt: '2022-02-07T07:46:03.000Z'
+                    eventId: 34970
+                    isRating: 0
+                    categoryId: null
+                    categoryName: ''
+                    sessionDetails: []
+                  - hubiloSpeakerId: 24340
+                    clientSpeakerId: '1234'
+                    speakerName: firstname lastname
+                    email: email@domain.com
+                    fbUrl: www.facebook.com/
+                    linkedinUrl: www.linkedin.com/
+                    twitterUrl: www.twitter.com/
+                    instagramUrl: www.instagram.com/
+                    profileImg: ''
+                    shortDescription: ''
+                    longDescription: ''
+                    multipleFile: ''
+                    presentation: ''
+                    presentationFileName: ''
+                    createTimeMilli: '1644228432086'
+                    updateTimeMilli: '1644228432086'
+                    updatedAt: '2022-02-07T10:07:12.000Z'
+                    createdAt: '2022-02-07T10:07:12.000Z'
+                    eventId: 34970
+                    isRating: 0
+                    categoryId: null
+                    categoryName: ''
+                    sessionDetails: []
+                    customFieldData:
+                    - id: 625697d6d9f03b1ee55ef1b7
+                      name: ''
+                      value: additonal field
+                      type: ''
+                    group:
+                    - groupName: Speaker
+                      groupId: 80d2e3344b75054121615c31
+                      groupType: ''
+                    attendanceType: on-site
+                    qrCode: asf765fa57656g5a765g7as
+                  currentPage: 0
+                  totalPages: 1
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '429':
+          description: Too many requests — rate limit exceeded (20 req/s per organizer)
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/session/track/upsert:
+    post:
+      operationId: addUpdateTrackForSessions
+      summary: Add/Update Track for Sessions
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add-Track Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  hubiloTrackId: 2970
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 10987
+              operationType: CREATE
+              agendaTrackDate: '2020-09-12'
+              name: Session Track
+              colorCode: '#fffff'
+  /api/{apiVersion}/integration/session/upsert:
+    post:
+      operationId: addUpdateSession
+      summary: Add/Update Session
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Add-Session Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  hubiloSessionId: 23211
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 9551
+              operationType: CREATE
+              name: Session 1
+              startTimeMilli: '1631206800000'
+              endTimeMilli: '1631210400000'
+              clientSessionSpeakers: []
+              hubiloSessionSpeakers:
+              - '2954'
+              - '7845'
+              trackId: '2970'
+              description: Hello description
+  /api/{apiVersion}/integration/analytics/session/session-info:
+    get:
+      operationId: listSessions
+      summary: List Sessions
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - agendaId: 24624
+                    organiserId: 345575
+                    agendaName: 'session one '
+                    agendaDate: '2021-10-12T00:00:00.000Z'
+                    agendaDescription: ''
+                    startTimeMilli: '1634058900000'
+                    endTimeMilli: '1634061600000'
+                    banner: http://domain.com/sessionbanner/345575/4629_6332_814988001639487417.png
+                    multipleFile:
+                    - https://domain.com/brochure/345575/dedd8770-8028-11ec-b6ce-567998577cf7_1643367356775.xlsx
+                    startTime: '2021-10-12 17:15:00'
+                    endTime: '2021-10-12 18:00:00'
+                    speakers:
+                    - speakerId: 13950
+                      name: speaker name
+                      profileImage: ''
+                    - speakerId: 13951
+                      name: speaker name
+                      profileImage: ''
+                    - speakerId: 13952
+                      name: speaker name
+                      profileImage: http://domain.com/speaker/345575/150/4391_8181_146763001639489064.png
+                  - agendaId: 24779
+                    organiserId: 345575
+                    agendaName: Session Name
+                    agendaDate: '2021-10-12T00:00:00.000Z'
+                    agendaDescription: ''
+                    startTimeMilli: '1634059800000'
+                    endTimeMilli: '1634061600000'
+                    banner: ''
+                    multipleFile: []
+                    startTime: '2021-10-12 17:30:00'
+                    endTime: '2021-10-12 18:00:00'
+                    speakers: []
+                  currentpage: 1
+                  totalPages: 1
+                  count: 2
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/analytics/session/register:
+    get:
+      operationId: listSessionRegistrations
+      summary: List Session Registrations
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - status: REJECTED
+                    userId: 6135g3634b7505431474d9c6
+                    firstName: firstname
+                    lastName: lastname
+                    designation: designation
+                    organisation: organization name
+                    phone: '9999999999'
+                    email: email@domain.com
+                    city: Heklo
+                    state: Huambo
+                    country: Angola
+                    about: write about yourself
+                    website: https://www.your_website_name.com
+                    facebookLink: https://www.facebook.com
+                    twitterLink: https://www.twitter/com
+                    linkedInLink: https://www.linkedin.com
+                    instagramLink: https://www.instagram.com
+                    memberGroups:
+                    - ATTENDEE
+                  - status: PENDING
+                    firstName: firstname
+                    lastName: lastname
+                    designation: ''
+                    organisation: ''
+                    phone: ''
+                    email: email@domain.com
+                    city: Gangtok
+                    state: Sikkim
+                    country: India
+                    about: write about yourself
+                    facebookLink: https://www.facebook.com
+                    twitterLink: https://www.twitter/com
+                    linkedInLink: https://www.linkedin.com
+                    instagramLink: https://www.instagram.com
+                    memberGroups:
+                    - ATTENDEE
+                    - BOOTH MEMBER
+                  currentPage: 1
+                  count: 2
+                  totalPages: 1
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/analytics/session/attendee:
+    get:
+      operationId: listSessionAttendanceDetails
+      summary: List Session Attendance Details
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/session/delete:
+    post:
+      operationId: delistSession
+      summary: Delist Session
+      tags:
+      - Session
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data: {}
+                message: Deleting Session
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 41321
+              hubiloSessionId:
+              - '37626'
+  /api/{apiVersion}/integration/event/list:
+    get:
+      operationId: listEvents
+      summary: List Events
+      tags:
+      - Event
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - id: 10988
+                    name: Hiring and Promoting Tomorrow’s Leaders
+                    description: This event is for student
+                    organiserId: 381866
+                    startTimeMilli: '1631527200000'
+                    endTimeMilli: '1631786400000'
+                    createTimeMilli: '1631513272000'
+                    favicon: ''
+                    communityBanner: []
+                    eventLogo: []
+                    loginBanner:
+                    - http://domain.com/banner/community_login_banner/381866/1120/4863_5693_078750001642751711.png
+                    welcomeVideo:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                      isHomeScreen: 0
+                      isShowAfterLogin: 0
+                      thumb: ''
+                      title: welcome video title
+                      description: short description of welcome video
+                  - id: 10987
+                    name: Integration
+                    description: <p>Its about Integration of an Marketing services</p>
+                    organiserId: 381866
+                    startTimeMilli: '1631192760000'
+                    endTimeMilli: '1631365560000'
+                    createTimeMilli: '1631192750000'
+                    favicon: ''
+                    communityBanner:
+                    - https://domain.com/banner/community_banner/381866/1036/4932_8094_574639001643782558.png
+                    eventLogo:
+                    - https://domain.com/logo/381866/300/3126_5621_095509001643782546.jpeg
+                    loginBanner: []
+                    welcomeVideo: []
+                  currentPage: 0
+                  totalPages: 1
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/event/detail:
+    get:
+      operationId: eventDetails
+      summary: Event Details
+      tags:
+      - Event
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                    id: 10987
+                    organiserId: 381866
+                    name: Integration
+                    startTimeMilli: '1631192760000'
+                    endTimeMilli: '1631365560000'
+                    description: <p>Its about Integration of an Marketing services</p>
+                    commonPhoneCode: '+91'
+                    commonPhoneCodeCountry: '+91'
+                    isEventOnline: 1
+                    locationId: null
+                    address: Darjeeling, West Bengal
+                    city: Darjeeling
+                    state: West Bengal
+                    country: India
+                    pincode: '386245'
+                    lat: '27.0410'
+                    lng: '88.2663'
+                    favicon: http://domain.com/favicon/381866/32/1665_9046_143971001643964401.png
+                    communityBanner:
+                    - http://domain.com/banner/community_banner/381866/1036/4764_6288_797856065442751663.png
+                    eventLogo:
+                    - http://domain.com/logo/381866/300/3979_7107_782769001642787476.jpeg
+                    - http://domain.com/logo/381866/300/4528_8590_464604001084751691.jpeg
+                    loginBanner:
+                    - http://domain.com/banner/community_login_banner/381866/1120/4863_5693_078750001642751711.png
+                    welcomeVideo:
+                    - type: YOUTUBE
+                      link: https://www.youtube.com/watch?v=your_video_code
+                      isHomeScreen: 0
+                      isShowAfterLogin: 0
+                      thumb: ''
+                      title: welcome video title
+                      description: short description of welcome video
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/event/delete:
+    post:
+      operationId: removeEvent
+      summary: Remove Event
+      tags:
+      - Event
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data: Event Deleted
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: 3713
+  /api/{apiVersion}/integration/organiser/profile:
+    get:
+      operationId: organiserProfile
+      summary: Organiser Profile
+      tags:
+      - Organiser
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                    id: 613a02ad2cdf8e773635e87a
+                    designation: Student
+                    phone: '9999999999'
+                    phoneCode: '+91'
+                    organisationName: organization name
+                    email: email+1@domain.com
+                    firstName: firstname
+                    lastName: lastname
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+  /api/{apiVersion}/integration/media/get-signed-url:
+    post:
+      operationId: getPreSignedUrl
+      summary: Get Pre-Signed URL
+      tags:
+      - Upload Media
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data:
+                  data:
+                  - uploadURL: https://v2qat-virtualevent-cdn.s3.ap-south-1.amazonaws.com/profile/c3d93a80-8e3f-11ec-a0e2-9bf53438fcb0_1644916506152.png?Content-Type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVUCLUIVSEZNVQYVV%2F20220215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220215T091506Z&X-Amz-Expires=300&X-Amz-Signature=655a895cd05c743930dccaccad230027c7a60d41870951b7abb3ee3874c30c3b&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read
+                    fileName: c3d93a80-8e3f-11ec-a0e2-9bf53438fcb0_1644916506152.png
+                    height: 200
+                    width: 200
+                message: ''
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              eventId: '11861'
+              organiserId: '345575'
+              uploadType: PROFILE
+              contentType: image/png
+              extension: png
+  /api/{apiVersion}/integration/media/set-acknowledgement:
+    post:
+      operationId: uploadMediaAcknowledgment
+      summary: Upload Media Acknowledgment
+      tags:
+      - Upload Media
+      parameters:
+      - name: apiVersion
+        in: path
+        required: true
+        schema:
+          type: string
+          default: v1
+        description: API version segment (e.g. v1).
+      responses:
+        '200':
+          description: Success Response
+          content:
+            application/json:
+              example:
+                status: 200
+                data: {}
+                message: Acknowledgement Successful”
+                flag: 0
+                eventLastUpdatedAt: 0
+        '429':
+          description: Too Many Requests
+          content:
+            application/json:
+              example:
+                status: 429
+                message: Too many requests, please try again later.
+        '400':
+          description: Bad request
+        '401':
+          description: Unauthorized — missing or invalid access token
+        '500':
+          description: Internal server error
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              fileName: a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png
+              organiserId: '345575'
+              uploadType: PROFILE
+              email: email@domain.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Access Token issued to the organiser, sent in the Authorization header as a Bearer
+        token.

@@ -1,0 +1,12 @@
+generated: '2026-07-19'
+method: generated
+source: openapi/hubilo-openapi.yml (operationIds verified against the provider Postman collection)
+skills:
+- file: hubilo-sync-attendees.md
+  name: Sync event attendees into Hubilo
+  api: openapi/hubilo-openapi.yml
+  operations: [listEvents, addUser, updateUser, listUsers, listDeletedUsers, deregisterUser]
+- file: hubilo-build-agenda.md
+  name: Build an event agenda in Hubilo
+  api: openapi/hubilo-openapi.yml
+  operations: [listEvents, addUpdateTrackForSessions, addUpdateSession, addUpdateSpeaker, listSessions, listSessionRegistrations, listSessionAttendanceDetails]

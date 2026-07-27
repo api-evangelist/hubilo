@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/hubilo-openapi.yml (response codes 400/401/429/500 observed across all 30 operations in
+  the provider Postman collection)
+format: json-envelope
+envelope_note: Hubilo returns a JSON body; errors are not RFC 9457 problem+json. The documented rate limit
+  surfaces as HTTP 429.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: Request payload failed validation (missing/invalid eventId, malformed body, or unknown field).
+  remediation: Check required fields and value formats against the operation schema.
+- status: 401
+  title: Unauthorized
+  meaning: Missing, expired, or invalid Access Token.
+  remediation: 'Obtain a fresh organiser Access Token and send it as an Authorization: Bearer header.'
+- status: 429
+  title: Too Many Requests
+  meaning: Organiser exceeded the rate limit of 20 requests/second (combined across all APIs).
+  remediation: Back off and retry; keep combined request rate under 20 req/s per organiser.
+- status: 500
+  title: Internal Server Error
+  meaning: Unexpected server-side error.
+  remediation: Retry with backoff; contact your Customer Success Manager if it persists.

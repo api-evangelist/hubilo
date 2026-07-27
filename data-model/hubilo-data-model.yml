@@ -1,0 +1,74 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/hubilo-openapi.yml
+entities:
+- Event
+- Session
+- Track
+- Speaker
+- User
+- MemberGroup
+- ExhibitorBooth
+- BoothMember
+- Organiser
+- Media
+- CustomField
+- MatchmakingField
+id_fields:
+  Event: eventId (integer)
+  ExhibitorBooth: hubiloExhibitorId (string)
+  Session: sessionId / agendaId
+  Organiser: organiserId
+relationships:
+- from: Session
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: Track
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: Speaker
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: Speaker
+  to: Session
+  type: belongs_to
+  via: sessionId
+- from: User
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: User
+  to: MemberGroup
+  type: belongs_to
+  via: groupIds
+- from: User
+  to: ExhibitorBooth
+  type: belongs_to
+  via: hubiloExhibitorId
+- from: MemberGroup
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: ExhibitorBooth
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: BoothMember
+  to: ExhibitorBooth
+  type: belongs_to
+  via: hubiloExhibitorId
+- from: Event
+  to: Organiser
+  type: belongs_to
+  via: organiserId
+- from: CustomField
+  to: Event
+  type: belongs_to
+  via: eventId
+- from: MatchmakingField
+  to: Event
+  type: belongs_to
+  via: eventId

@@ -1,0 +1,11 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.hubilo.com/ (Virtual Pro Public APIs v1.2 collection description)
+rate_limits:
+- scope: organiser
+  limit_count: 20
+  window: second
+  combined: true
+  description: 20 requests per second at the organiser level. This is a combined total limit
+    across all Hubilo Public APIs.
+  exceeded_status: 429

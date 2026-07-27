@@ -1,0 +1,19 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Hubilo (Virtual PRO) Public API
+  version: 1.0.0
+extends: openapi/hubilo-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-source: Derived from the provider Postman collection (Virtual Pro Public APIs v1.2)
+    x-apievangelist-rate-limit: 20 req/s per organiser (combined)
+    x-apievangelist-artifacts:
+      authentication: authentication/hubilo-authentication.yml
+      conventions: conventions/hubilo-conventions.yml
+      errors: errors/hubilo-problem-types.yml
+      data-model: data-model/hubilo-data-model.yml
+      webhooks: asyncapi/hubilo-webhooks.yml
+- target: $.info
+  update:
+    x-agentic-access: agentic-access/hubilo-agentic-access.yml

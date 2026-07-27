@@ -1,0 +1,27 @@
+# Hubilo (Virtual PRO) Public API
+
+> Hubilo — branded Virtual PRO — is an enterprise virtual, hybrid, and in-person event platform. Its Public API (v1.2) lets organisers manage events, sessions and agenda tracks, speakers, attendees (users) and member groups, exhibitor booths, the organiser profile, and media uploads. Auth is an organiser Access Token (Authorization: Bearer). Rate limit: 20 requests/second per organiser, combined across all APIs.
+
+## APIs
+- [Hubilo Developer Portal](https://developer.hubilo.com/): Public APIs v1.2 documentation (Postman-published).
+- [OpenAPI (generated from the provider Postman collection)](openapi/hubilo-openapi.yml): 30 operations across Event, Session, Speaker, User, Exhibitor, Organiser, and Upload Media.
+
+## Specs & Artifacts
+- [OpenAPI](openapi/hubilo-openapi.yml)
+- [Postman collection (verbatim)](postman/hubilo-postman-collection.json)
+- [Authentication](authentication/hubilo-authentication.yml)
+- [Conventions](conventions/hubilo-conventions.yml)
+- [Error catalog](errors/hubilo-problem-types.yml)
+- [Data model](data-model/hubilo-data-model.yml)
+- [Rate limits](rate-limits/hubilo-rate-limits.yml)
+- [Lifecycle](lifecycle/hubilo-lifecycle.yml)
+- [Changelog](changelog/hubilo-changelog.yml)
+- [Webhooks](asyncapi/hubilo-webhooks.yml)
+- [MCP (candidate tools)](mcp/hubilo-mcp.yml)
+- [Agentic access](agentic-access/hubilo-agentic-access.yml)
+- [Agent skills](skills/_index.yml)
+
+## Docs
+- [Developer Portal](https://developer.hubilo.com/)
+- [Integrations](https://www.hubilo.com/integrations)
+- [Website](https://hubilo.com/)

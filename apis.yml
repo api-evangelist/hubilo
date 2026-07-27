@@ -1,25 +1,206 @@
 aid: hubilo
 name: hubilo
-description: hubilo is a company surfaced as a portfolio company of balderton-capital and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Hubilo (now branded Virtual PRO) is an enterprise virtual, hybrid, and in-person event
+  platform used by conference producers and corporate event teams to create, promote, run, and
+  analyze multi-session, multi-day events. Its Public API v1.2 lets organisers manage events,
+  agenda sessions and tracks, speakers, attendees (users) and member groups, exhibitor booths,
+  the organiser profile, and media uploads, plus a webhooks surface for activity notifications.
+  Authentication is an organiser-level Access Token (Authorization: Bearer) and the API enforces
+  a combined limit of 20 requests per second per organiser. Hubilo is a portfolio company of
+  Balderton Capital.
 url: https://raw.githubusercontent.com/api-evangelist/hubilo/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://framerusercontent.com/images/WwfBR1oRs750Jqr5sx6xqvIOc.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - balderton-capital
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
-apis: []
+- Events
+- Virtual Events
+- Webinars
+- Event Management
+- Hybrid Events
+- Attendee Engagement
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: hubilo:hubilo-event-api
+  name: hubilo Event API
+  description: The Event API from hubilo — 3 operation(s) for event.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - Event
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-event-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
+- aid: hubilo:hubilo-exhibitor-api
+  name: hubilo Exhibitor API
+  description: The Exhibitor API from hubilo — 7 operation(s) for exhibitor.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - Exhibitor
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-exhibitor-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
+- aid: hubilo:hubilo-organiser-api
+  name: hubilo Organiser API
+  description: The Organiser API from hubilo — 1 operation(s) for organiser.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - Organiser
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-organiser-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
+- aid: hubilo:hubilo-session-api
+  name: hubilo Session API
+  description: The Session API from hubilo — 6 operation(s) for session.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - Session
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-session-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
+- aid: hubilo:hubilo-speaker-api
+  name: hubilo Speaker API
+  description: The Speaker API from hubilo — 2 operation(s) for speaker.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - Speaker
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-speaker-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
+- aid: hubilo:hubilo-upload-media-api
+  name: hubilo Upload Media API
+  description: The Upload Media API from hubilo — 2 operation(s) for upload media.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - Upload Media
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-upload-media-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
+- aid: hubilo:hubilo-user-api
+  name: hubilo User API
+  description: The User API from hubilo — 9 operation(s) for user.
+  humanURL: https://developer.hubilo.com/
+  baseURL: https://api.hubilo.com
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/hubilo-user-api-openapi.yml
+  - type: Documentation
+    url: https://developer.hubilo.com/
+  - type: APIReference
+    url: https://developer.hubilo.com/
 common:
 - type: Website
   url: https://hubilo.com/
+- type: DeveloperPortal
+  url: https://developer.hubilo.com/
+- type: Documentation
+  url: https://developer.hubilo.com/
+- type: APIReference
+  url: https://developer.hubilo.com/
+- type: Postman
+  url: https://documenter.getpostman.com/view/7951787/S1a4YSxN
+- type: Pricing
+  url: https://www.virtualpro.com/pricing
+- type: SignUp
+  url: https://admin.virtualpro.com
+- type: PrivacyPolicy
+  url: https://www.virtualpro.com/privacy-policy
+- type: TermsOfService
+  url: https://www.brandlive.com/legal
+- type: Support
+  url: https://support.brandlive.com/
+- type: Integrations
+  url: https://www.hubilo.com/integrations
+- type: OpenAPI
+  url: openapi/hubilo-openapi.yml
+- type: Authentication
+  url: authentication/hubilo-authentication.yml
+- type: Conventions
+  url: conventions/hubilo-conventions.yml
+- type: ErrorCatalog
+  url: errors/hubilo-problem-types.yml
+- type: DataModel
+  url: data-model/hubilo-data-model.yml
+- type: RateLimits
+  url: rate-limits/hubilo-rate-limits.yml
+- type: Lifecycle
+  url: lifecycle/hubilo-lifecycle.yml
+- type: ChangeLog
+  url: changelog/hubilo-changelog.yml
+- type: Conformance
+  url: conformance/hubilo-conformance.yml
+- type: Webhooks
+  url: asyncapi/hubilo-webhooks.yml
+- type: MCPServer
+  url: mcp/hubilo-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/hubilo-llms.txt
+- type: Overlay
+  url: overlays/hubilo-openapi-overlay.yaml
+- type: AgenticAccess
+  url: agentic-access/hubilo-agentic-access.yml
+- type: DomainSecurity
+  url: security/hubilo-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

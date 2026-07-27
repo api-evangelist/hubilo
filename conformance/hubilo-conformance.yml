@@ -1,0 +1,25 @@
+generated: '2026-07-19'
+method: derived
+source: openapi/hubilo-openapi.yml + https://developer.hubilo.com/
+standards:
+- id: oauth2
+  conforms: false
+  evidence: Auth is a static organiser Access Token (HTTP bearer), not an OAuth2 authorization flow.
+- id: bearer-token-http
+  conforms: true
+  evidence: Authorization Bearer access token on every operation.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors are returned as a plain JSON envelope, not application/problem+json.
+- id: pagination
+  conforms: true
+  evidence: List operations use currentPage + limit page-number pagination.
+- id: rate-limiting
+  conforms: true
+  evidence: Documented 20 req/s per-organiser combined limit surfaced via HTTP 429.
+- id: incremental-sync
+  conforms: true
+  evidence: User listing supports lastUpdatedAt + lastUpdatedAtOp filtering.
+- id: rest-json
+  conforms: true
+  evidence: JSON request/response over HTTPS REST endpoints under /api/{version}/integration.

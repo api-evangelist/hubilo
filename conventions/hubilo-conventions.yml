@@ -1,0 +1,55 @@
+generated: '2026-07-19'
+method: searched
+source: 'https://developer.hubilo.com/ (Postman: Virtual Pro Public APIs v1.2)'
+authentication:
+  style: bearer-token
+  header: Authorization
+  scheme: Bearer
+  detail: Organiser-level Access Token; combined limits are enforced per organiser.
+  ref: authentication/hubilo-authentication.yml
+pagination:
+  style: page-number
+  params:
+    page: currentPage
+    size: limit
+  applies_to:
+  - listUsers
+  - listEvents
+  - listSpeakers
+  - exhibitorBooths
+  - boothAnaltyics
+  - listSessions
+  - listSessionAttendanceDetails
+  - listMemberGroups
+  - listDeletedUsers
+  note: List endpoints accept currentPage + limit query parameters.
+filtering:
+  incremental: true
+  params:
+  - lastUpdatedAt
+  - lastUpdatedAtOp
+  note: User listing supports incremental sync via lastUpdatedAt with a comparison operator.
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is documented. Several write operations are
+    modeled as upsert (session/upsert, speaker/upsert, track/upsert) which are naturally
+    idempotent on business keys, but there is no request-level idempotency contract.
+versioning:
+  scheme: uri-path
+  current: v1.2
+  path_segment: /api/{apiVersion}/integration/...
+  note: Version carried in the URL path; per the changelog, older versions continue to work as-is.
+  ref: lifecycle/hubilo-lifecycle.yml
+rate_limiting:
+  limit: 20 requests/second
+  scope: organiser
+  combined: true
+  signal: HTTP 429
+  ref: rate-limits/hubilo-rate-limits.yml
+error_envelope:
+  format: json
+  problem_json: false
+  ref: errors/hubilo-problem-types.yml
+media_upload:
+  style: pre-signed-url
+  flow: request a pre-signed URL (getPreSignedUrl), upload the asset, then acknowledge (uploadMediaAcknowledgment).

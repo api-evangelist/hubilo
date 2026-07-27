@@ -1,0 +1,15 @@
+generated: '2026-07-19'
+method: searched
+type: Webhooks
+source: https://developer.hubilo.com/ (Webhooks + Webhooks Management API sections)
+note: Hubilo documents a webhook surface plus a Webhooks Management API for subscribing to
+  event/attendee activity, and exposes webhook triggers through Zapier. The concrete event-name
+  catalog is not published in the open Postman collection, so individual event payloads are
+  not enumerated here (no fabrication). This artifact records the advertised webhook surface.
+management_api: true
+evidence:
+- source: https://developer.hubilo.com/
+  kind: developer-portal-webhooks-section
+- source: https://zapier.com/apps/hubilo/integrations/webhook
+  kind: zapier-webhook-triggers
+spec_type: none

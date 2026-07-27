@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.hubilo.com/ (Virtual Pro Public APIs v1.2 collection description Changelog)
+scheme: uri-path-version
+current_version: v1.2
+note: Recent-window changelog captured verbatim from the provider's published API collection.
+  Older versions continue to work as-is.
+entries:
+- version: '1.2'
+  highlights:
+  - Moved to version 1.2 enabling support for Hybrid and in-person events.
+  - Delist Exhibitor Booth API added to the Exhibitor folder.
+  - Remove Booth Member API added to the Exhibitor folder.
+  - Delete User API added to the User folder.
+  - Delete Session API added to the Session folder.
+  breaking: false
+  additions: true

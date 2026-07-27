@@ -1,0 +1,26 @@
+{
+  "provider": "hubilo",
+  "sources": [
+    "hubilo-event-api-openapi.yml",
+    "hubilo-exhibitor-api-openapi.yml",
+    "hubilo-organiser-api-openapi.yml",
+    "hubilo-session-api-openapi.yml",
+    "hubilo-speaker-api-openapi.yml",
+    "hubilo-upload-media-api-openapi.yml",
+    "hubilo-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "hubilo-event-api-openapi.yml",
+    "hubilo-exhibitor-api-openapi.yml",
+    "hubilo-organiser-api-openapi.yml",
+    "hubilo-session-api-openapi.yml",
+    "hubilo-speaker-api-openapi.yml",
+    "hubilo-upload-media-api-openapi.yml",
+    "hubilo-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

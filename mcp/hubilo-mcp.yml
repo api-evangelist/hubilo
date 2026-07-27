@@ -1,0 +1,100 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: openapi/hubilo-openapi.yml
+note: No official hosted MCP server found for Hubilo/Virtual PRO as of this pass. Candidate tool list
+  derived one-per-operation from the OpenAPI generated from the provider Postman collection.
+server:
+  name: hubilo
+  transport: stdio
+tools:
+- name: exhibitorBoothCategory
+  description: Exhibitor Booth Category
+  source_operation: openapi/hubilo-openapi.yml#exhibitorBoothCategory
+- name: exhibitorBooths
+  description: Exhibitor Booths
+  source_operation: openapi/hubilo-openapi.yml#exhibitorBooths
+- name: boothAnaltyics
+  description: Booth Analtyics
+  source_operation: openapi/hubilo-openapi.yml#boothAnaltyics
+- name: addVirtualExhibitorBooth
+  description: Add Virtual Exhibitor Booth
+  source_operation: openapi/hubilo-openapi.yml#addVirtualExhibitorBooth
+- name: updateExhibitorBooth
+  description: Update Exhibitor Booth
+  source_operation: openapi/hubilo-openapi.yml#updateExhibitorBooth
+- name: delistExhibitorBooth
+  description: Delist Exhibitor Booth
+  source_operation: openapi/hubilo-openapi.yml#delistExhibitorBooth
+- name: removeBoothMember
+  description: Remove Booth Member
+  source_operation: openapi/hubilo-openapi.yml#removeBoothMember
+- name: listUsers
+  description: List Users
+  source_operation: openapi/hubilo-openapi.yml#listUsers
+- name: addUser
+  description: Add User
+  source_operation: openapi/hubilo-openapi.yml#addUser
+- name: updateUser
+  description: Update User
+  source_operation: openapi/hubilo-openapi.yml#updateUser
+- name: deregisterUser
+  description: Deregister User
+  source_operation: openapi/hubilo-openapi.yml#deregisterUser
+- name: listMemberGroups
+  description: List Member Groups
+  source_operation: openapi/hubilo-openapi.yml#listMemberGroups
+- name: addMemberGroup
+  description: Add Member Group
+  source_operation: openapi/hubilo-openapi.yml#addMemberGroup
+- name: customFieldsOfUsers
+  description: Custom Fields of Users
+  source_operation: openapi/hubilo-openapi.yml#customFieldsOfUsers
+- name: listOfMatchmakingFields
+  description: List of Matchmaking Fields
+  source_operation: openapi/hubilo-openapi.yml#listOfMatchmakingFields
+- name: listDeletedUsers
+  description: List Deleted Users
+  source_operation: openapi/hubilo-openapi.yml#listDeletedUsers
+- name: addUpdateSpeaker
+  description: Add/Update Speaker
+  source_operation: openapi/hubilo-openapi.yml#addUpdateSpeaker
+- name: listSpeakers
+  description: List Speakers
+  source_operation: openapi/hubilo-openapi.yml#listSpeakers
+- name: addUpdateTrackForSessions
+  description: Add/Update Track for Sessions
+  source_operation: openapi/hubilo-openapi.yml#addUpdateTrackForSessions
+- name: addUpdateSession
+  description: Add/Update Session
+  source_operation: openapi/hubilo-openapi.yml#addUpdateSession
+- name: listSessions
+  description: List Sessions
+  source_operation: openapi/hubilo-openapi.yml#listSessions
+- name: listSessionRegistrations
+  description: List Session Registrations
+  source_operation: openapi/hubilo-openapi.yml#listSessionRegistrations
+- name: listSessionAttendanceDetails
+  description: List Session Attendance Details
+  source_operation: openapi/hubilo-openapi.yml#listSessionAttendanceDetails
+- name: delistSession
+  description: Delist Session
+  source_operation: openapi/hubilo-openapi.yml#delistSession
+- name: listEvents
+  description: List Events
+  source_operation: openapi/hubilo-openapi.yml#listEvents
+- name: eventDetails
+  description: Event Details
+  source_operation: openapi/hubilo-openapi.yml#eventDetails
+- name: removeEvent
+  description: Remove Event
+  source_operation: openapi/hubilo-openapi.yml#removeEvent
+- name: organiserProfile
+  description: Organiser Profile
+  source_operation: openapi/hubilo-openapi.yml#organiserProfile
+- name: getPreSignedUrl
+  description: Get Pre-Signed URL
+  source_operation: openapi/hubilo-openapi.yml#getPreSignedUrl
+- name: uploadMediaAcknowledgment
+  description: Upload Media Acknowledgment
+  source_operation: openapi/hubilo-openapi.yml#uploadMediaAcknowledgment

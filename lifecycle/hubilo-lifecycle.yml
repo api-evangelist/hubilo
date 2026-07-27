@@ -1,0 +1,17 @@
+generated: '2026-07-19'
+method: searched
+source: https://developer.hubilo.com/ (Virtual Pro Public APIs v1.2)
+versioning:
+  scheme: uri-path
+  current: v1.2
+  docs: https://developer.hubilo.com/
+  policy: Older API versions continue to work as-is when a new version is released.
+deprecation:
+  policy_documented: false
+  sunset_header: false
+  note: No formal deprecation policy or RFC 8594 Sunset header support is documented; the
+    provider states older versions keep working rather than being retired.
+sla:
+  documented: false
+status_page: null
+changelog_ref: changelog/hubilo-changelog.yml
