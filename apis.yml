@@ -168,7 +168,7 @@ common:
 - type: Integrations
   url: https://www.hubilo.com/integrations
 - type: OpenAPI
-  url: openapi/hubilo-openapi.yml
+  url: openapi/_original/hubilo-openapi.yml
 - type: Authentication
   url: authentication/hubilo-authentication.yml
 - type: Conventions
