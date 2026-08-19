@@ -1,0 +1,2062 @@
+{
+  "item": [
+    {
+      "id": "f82ec84d-b482-456d-89b0-be42f686e6be",
+      "name": "Session",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60444745-a90a-49ec-aaa9-f9bb8263da75",
+          "name": "Add/Update Track for Sessions",
+          "request": {
+            "name": "Add/Update Track for Sessions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "session",
+                "track",
+                "upsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": 10987,\n  \"operationType\": \"CREATE\",\n  \"agendaTrackDate\": \"2020-09-12\",\n  \"name\": \"Session Track\",\n  \"colorCode\": \"#fffff\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4bb9cf6e-6c66-419e-89d4-dd673b1f1955",
+              "name": "Add-Track Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "track",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 10987,\n  \"operationType\": \"CREATE\",\n  \"agendaTrackDate\": \"2020-09-12\",\n  \"name\": \"Session Track\",\n  \"colorCode\": \"#fffff\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"hubiloTrackId\": 2970\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b3a3dfe8-c059-4c7d-b67a-efad40d3756b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "track",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 10987,\n  \"operationType\": \"CREATE\",\n  \"agendaTrackDate\": \"2020-09-12\",\n  \"name\": \"Session Track\",\n  \"colorCode\": \"#fffff\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "213e3cd8-9f35-4d04-8d5d-bc8734c47108",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "track",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 10987,\n  \"operationType\": \"CREATE\",\n  \"agendaTrackDate\": \"2020-09-12\",\n  \"name\": \"Session Track\",\n  \"colorCode\": \"#fffff\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5b9f07e8-0e1d-4936-9339-ee621bb45c6b",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "track",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 10987,\n  \"operationType\": \"CREATE\",\n  \"agendaTrackDate\": \"2020-09-12\",\n  \"name\": \"Session Track\",\n  \"colorCode\": \"#fffff\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7203bbf0-731b-4657-bd3d-637dcfb145db",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "track",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 10987,\n  \"operationType\": \"CREATE\",\n  \"agendaTrackDate\": \"2020-09-12\",\n  \"name\": \"Session Track\",\n  \"colorCode\": \"#fffff\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2a43389-9568-4599-a8b8-e28e1a10966e",
+          "name": "Add/Update Session",
+          "request": {
+            "name": "Add/Update Session",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "session",
+                "upsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": 9551,\n  \"operationType\": \"CREATE\",\n  \"name\": \"Session 1\",\n  \"startTimeMilli\": \"1631206800000\",\n  \"endTimeMilli\": \"1631210400000\",\n  \"clientSessionSpeakers\": [],\n  \"hubiloSessionSpeakers\": [\n    \"2954\",\n    \"7845\"\n  ],\n  \"trackId\": \"2970\",\n  \"description\": \"Hello description\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "15b4bf4d-02bc-4f8a-b024-de75e63904bf",
+              "name": "Add-Session Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 9551,\n  \"operationType\": \"CREATE\",\n  \"name\": \"Session 1\",\n  \"startTimeMilli\": \"1631206800000\",\n  \"endTimeMilli\": \"1631210400000\",\n  \"clientSessionSpeakers\": [],\n  \"hubiloSessionSpeakers\": [\n    \"2954\",\n    \"7845\"\n  ],\n  \"trackId\": \"2970\",\n  \"description\": \"Hello description\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"hubiloSessionId\": 23211\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a098a33-9d46-4ef7-9988-20f3a063c778",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 9551,\n  \"operationType\": \"CREATE\",\n  \"name\": \"Session 1\",\n  \"startTimeMilli\": \"1631206800000\",\n  \"endTimeMilli\": \"1631210400000\",\n  \"clientSessionSpeakers\": [],\n  \"hubiloSessionSpeakers\": [\n    \"2954\",\n    \"7845\"\n  ],\n  \"trackId\": \"2970\",\n  \"description\": \"Hello description\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3b656617-c6ca-4873-ae7d-13745c4e01f7",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 9551,\n  \"operationType\": \"CREATE\",\n  \"name\": \"Session 1\",\n  \"startTimeMilli\": \"1631206800000\",\n  \"endTimeMilli\": \"1631210400000\",\n  \"clientSessionSpeakers\": [],\n  \"hubiloSessionSpeakers\": [\n    \"2954\",\n    \"7845\"\n  ],\n  \"trackId\": \"2970\",\n  \"description\": \"Hello description\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aa68b4d3-21e7-44f8-a27c-35e2a48c2da5",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 9551,\n  \"operationType\": \"CREATE\",\n  \"name\": \"Session 1\",\n  \"startTimeMilli\": \"1631206800000\",\n  \"endTimeMilli\": \"1631210400000\",\n  \"clientSessionSpeakers\": [],\n  \"hubiloSessionSpeakers\": [\n    \"2954\",\n    \"7845\"\n  ],\n  \"trackId\": \"2970\",\n  \"description\": \"Hello description\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "78a2268a-5ff4-4f4a-8681-292f4a83eae7",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 9551,\n  \"operationType\": \"CREATE\",\n  \"name\": \"Session 1\",\n  \"startTimeMilli\": \"1631206800000\",\n  \"endTimeMilli\": \"1631210400000\",\n  \"clientSessionSpeakers\": [],\n  \"hubiloSessionSpeakers\": [\n    \"2954\",\n    \"7845\"\n  ],\n  \"trackId\": \"2970\",\n  \"description\": \"Hello description\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d244ae8-e45b-4084-86a7-762c4f338a22",
+          "name": "List Sessions",
+          "request": {
+            "name": "List Sessions",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "analytics",
+                "session",
+                "session-info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf0f44c9-ca75-4cb6-8936-7f6427a070c2",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "session-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"data\": [\n      {\n        \"agendaId\": 24624,\n        \"organiserId\": 345575,\n        \"agendaName\": \"session one \",\n        \"agendaDate\": \"2021-10-12T00:00:00.000Z\",\n        \"agendaDescription\": \"\",\n        \"startTimeMilli\": \"1634058900000\",\n        \"endTimeMilli\": \"1634061600000\",\n        \"banner\": \"http://domain.com/sessionbanner/345575/4629_6332_814988001639487417.png\",\n        \"multipleFile\": [\n          \"https://domain.com/brochure/345575/dedd8770-8028-11ec-b6ce-567998577cf7_1643367356775.xlsx\"\n        ],\n        \"startTime\": \"2021-10-12 17:15:00\",\n        \"endTime\": \"2021-10-12 18:00:00\",\n        \"speakers\": [\n          {\n            \"speakerId\": 13950,\n            \"name\": \"speaker name\",\n            \"profileImage\": \"\"\n          },\n          {\n            \"speakerId\": 13951,\n            \"name\": \"speaker name\",\n            \"profileImage\": \"\"\n          },\n          {\n            \"speakerId\": 13952,\n            \"name\": \"speaker name\",\n            \"profileImage\": \"http://domain.com/speaker/345575/150/4391_8181_146763001639489064.png\"\n          }\n        ]\n      },\n      {\n        \"agendaId\": 24779,\n        \"organiserId\": 345575,\n        \"agendaName\": \"Session Name\",\n        \"agendaDate\": \"2021-10-12T00:00:00.000Z\",\n        \"agendaDescription\": \"\",\n        \"startTimeMilli\": \"1634059800000\",\n        \"endTimeMilli\": \"1634061600000\",\n        \"banner\": \"\",\n        \"multipleFile\": [],\n        \"startTime\": \"2021-10-12 17:30:00\",\n        \"endTime\": \"2021-10-12 18:00:00\",\n        \"speakers\": []\n      }\n    ],\n    \"currentpage\": 1,\n    \"totalPages\": 1,\n    \"count\": 2\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2c9dd310-3e15-4955-9cbb-5d94445eeba8",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "session-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0f2dfe3e-806f-4662-8ae0-a5ee597504e2",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "session-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0001eb8a-aa3d-45d2-bc84-3dc34031b807",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "session-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "093d002a-2709-4bb0-a5ff-62cca07acb83",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "session-info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28f8a2c5-da0b-46cb-8704-db8cb6774232",
+          "name": "List Session Registrations",
+          "request": {
+            "name": "List Session Registrations",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "analytics",
+                "session",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8dfc635e-8837-4697-9a48-883e3524f4cc",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"data\": [\n      {\n        \"status\": \"REJECTED\",\n        \"userId\": \"6135g3634b7505431474d9c6\",\n        \"firstName\": \"firstname\",\n        \"lastName\": \"lastname\",\n        \"designation\": \"designation\",\n        \"organisation\": \"organization name\",\n        \"phone\": \"9999999999\",\n        \"email\": \"email@domain.com\",\n        \"city\": \"Heklo\",\n        \"state\": \"Huambo\",\n        \"country\": \"Angola\",\n        \"about\": \"write about yourself\",\n        \"website\": \"https://www.your_website_name.com\",\n        \"facebookLink\": \"https://www.facebook.com\",\n        \"twitterLink\": \"https://www.twitter/com\",\n        \"linkedInLink\": \"https://www.linkedin.com\",\n        \"instagramLink\": \"https://www.instagram.com\",\n        \"memberGroups\": [\n          \"ATTENDEE\"\n        ]\n      },\n      {\n        \"status\": \"PENDING\",\n        \"firstName\": \"firstname\",\n        \"lastName\": \"lastname\",\n        \"designation\": \"\",\n        \"organisation\": \"\",\n        \"phone\": \"\",\n        \"email\": \"email@domain.com\",\n        \"city\": \"Gangtok\",\n        \"state\": \"Sikkim\",\n        \"country\": \"India\",\n        \"about\": \"write about yourself\",\n        \"facebookLink\": \"https://www.facebook.com\",\n        \"twitterLink\": \"https://www.twitter/com\",\n        \"linkedInLink\": \"https://www.linkedin.com\",\n        \"instagramLink\": \"https://www.instagram.com\",\n        \"memberGroups\": [\n          \"ATTENDEE\",\n          \"BOOTH MEMBER\"\n        ]\n      }\n    ],\n    \"currentPage\": 1,\n    \"count\": 2,\n    \"totalPages\": 1\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0568ad24-850a-4844-95db-c63f8a63b0b6",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05fefcaf-ea23-431c-b580-8778f9cf6b72",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5715bb30-655c-424a-9ba9-e8e3e38ff815",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85f2544e-ea05-4434-a7f9-061ef1cc7626",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06ccdc9c-1f24-4f5b-bb5d-560b8af35122",
+          "name": "List Session Attendance Details",
+          "request": {
+            "name": "List Session Attendance Details",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "analytics",
+                "session",
+                "attendee"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c20031af-31a9-4b22-b7f9-a47c94982bf6",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "attendee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a1384c17-ec3f-454f-a945-479f27dc3d80",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "attendee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61a29d91-4782-4267-a583-b928dad19e1e",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "attendee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "53147fb4-2404-489f-bab2-00d0ee72b8cc",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "attendee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4bb6cf23-b469-457c-9e07-6371ee3cfd35",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "analytics",
+                    "session",
+                    "attendee"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc6e0394-e681-4c4b-8f25-83cb65ac7f89",
+          "name": "Delist Session",
+          "request": {
+            "name": "Delist Session",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "session",
+                "delete"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": 41321,\n  \"hubiloSessionId\": [\n    \"37626\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1dd26bfd-f27b-4662-842e-ba36597ece56",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 41321,\n  \"hubiloSessionId\": [\n    \"37626\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {},\n  \"message\": \"Deleting Session\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d047efa1-e18f-4e58-8cea-9615dbd15396",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 41321,\n  \"hubiloSessionId\": [\n    \"37626\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "385edc09-b1d2-4c93-9780-0648dfe2fb79",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 41321,\n  \"hubiloSessionId\": [\n    \"37626\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2548b6f1-2166-4ec4-b34c-b6e357dde509",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 41321,\n  \"hubiloSessionId\": [\n    \"37626\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2b74bea9-957b-45d0-add7-14abfcae7367",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "session",
+                    "delete"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": 41321,\n  \"hubiloSessionId\": [\n    \"37626\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hubilo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "06593f2d-bd4f-43b9-b036-46d7c506afb3",
+    "name": "Hubilo (Virtual PRO) Public Event Session API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider's published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).\n\nContact Support:\n Name: Hubilo Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

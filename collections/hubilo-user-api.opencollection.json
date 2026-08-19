@@ -1,0 +1,211 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hubilo (Virtual PRO) Public Event User API",
+    "version": "1.2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Users"
+        },
+        {
+          "info": {
+            "name": "Add User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/add",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add User"
+        },
+        {
+          "info": {
+            "name": "Update User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/update",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update User"
+        },
+        {
+          "info": {
+            "name": "Deregister User",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/delete",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Deregister User"
+        },
+        {
+          "info": {
+            "name": "List Member Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/membergroup/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Member Groups"
+        },
+        {
+          "info": {
+            "name": "Add Member Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/membergroup/create",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Member Group"
+        },
+        {
+          "info": {
+            "name": "Custom Fields of Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/customfieldstructure",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "Custom Fields of Users"
+        },
+        {
+          "info": {
+            "name": "List of Matchmaking Fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/matchmaking/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List of Matchmaking Fields"
+        },
+        {
+          "info": {
+            "name": "List Deleted Users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/user/deleted/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Deleted Users"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

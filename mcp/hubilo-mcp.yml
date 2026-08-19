@@ -98,3 +98,9 @@ tools:
 - name: uploadMediaAcknowledgment
   description: Upload Media Acknowledgment
   source_operation: openapi/hubilo-openapi.yml#uploadMediaAcknowledgment
+deployment:
+  mode: none
+  verified: derived
+  tools: 30
+  checked: '2026-08-12'
+  source: catalog MCP census

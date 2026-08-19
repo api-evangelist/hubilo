@@ -1,0 +1,761 @@
+{
+  "item": [
+    {
+      "id": "8c3ad879-5085-41b6-adbd-506e9c1a83d2",
+      "name": "Upload Media",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "209a9b82-7d94-4aec-ab09-51c752ed2d12",
+          "name": "Get Pre-Signed URL",
+          "request": {
+            "name": "Get Pre-Signed URL",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "media",
+                "get-signed-url"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": \"11861\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"contentType\": \"image/png\",\n  \"extension\": \"png\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ad2eb1c-c669-43ef-8599-cb0761db94e0",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "get-signed-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"11861\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"contentType\": \"image/png\",\n  \"extension\": \"png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"data\": [\n      {\n        \"uploadURL\": \"https://v2qat-virtualevent-cdn.s3.ap-south-1.amazonaws.com/profile/c3d93a80-8e3f-11ec-a0e2-9bf53438fcb0_1644916506152.png?Content-Type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVUCLUIVSEZNVQYVV%2F20220215%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20220215T091506Z&X-Amz-Expires=300&X-Amz-Signature=655a895cd05c743930dccaccad230027c7a60d41870951b7abb3ee3874c30c3b&X-Amz-SignedHeaders=host%3Bx-amz-acl&x-amz-acl=public-read\",\n        \"fileName\": \"c3d93a80-8e3f-11ec-a0e2-9bf53438fcb0_1644916506152.png\",\n        \"height\": 200,\n        \"width\": 200\n      }\n    ]\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5e75fc60-8e7c-44dc-a60b-1e200960772b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "get-signed-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"11861\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"contentType\": \"image/png\",\n  \"extension\": \"png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "796ee385-17bd-45ee-bb5e-c48549c85a67",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "get-signed-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"11861\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"contentType\": \"image/png\",\n  \"extension\": \"png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f0251477-8868-44d5-bb67-0b62a1181dc1",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "get-signed-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"11861\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"contentType\": \"image/png\",\n  \"extension\": \"png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d4dac4ea-33a2-4f4a-9db0-3e1e5a4fcbc0",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "get-signed-url"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"11861\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"contentType\": \"image/png\",\n  \"extension\": \"png\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "76a16fdf-58b7-4c47-9d51-0385b3d23fad",
+          "name": "Upload Media Acknowledgment",
+          "request": {
+            "name": "Upload Media Acknowledgment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "media",
+                "set-acknowledgement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fileName\": \"a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"email\": \"email@domain.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d787d9ef-22c6-4b07-a243-202175c6cbec",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "set-acknowledgement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"email\": \"email@domain.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {},\n  \"message\": \"Acknowledgement Successful”\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6425f308-665e-45b2-adbb-f4b2c9ccf80b",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "set-acknowledgement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"email\": \"email@domain.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "18c97eca-e929-47ce-9cde-495b21e2fd2f",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "set-acknowledgement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"email\": \"email@domain.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61f86452-9d67-4196-9464-eb4f6ac6be1f",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "set-acknowledgement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"email\": \"email@domain.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 429,\n  \"message\": \"Too many requests, please try again later.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "027c141c-1029-424c-8b74-1f8c691cb9dd",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "media",
+                    "set-acknowledgement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fileName\": \"a5d30280-8e50-11ec-a0e2-9bf53438fcb0_1644923757224.png\",\n  \"organiserId\": \"345575\",\n  \"uploadType\": \"PROFILE\",\n  \"email\": \"email@domain.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hubilo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "32ce5b01-6673-4835-a425-b7e23cf2fc12",
+    "name": "Hubilo (Virtual PRO) Public Event Upload Media API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider's published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).\n\nContact Support:\n Name: Hubilo Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

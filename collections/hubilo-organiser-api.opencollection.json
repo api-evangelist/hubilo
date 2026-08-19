@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hubilo (Virtual PRO) Public Event Organiser API",
+    "version": "1.2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organiser",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Organiser Profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/organiser/profile",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "Organiser Profile"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

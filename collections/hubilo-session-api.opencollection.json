@@ -1,0 +1,150 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hubilo (Virtual PRO) Public Event Session API",
+    "version": "1.2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Session",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add/Update Track for Sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/session/track/upsert",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add/Update Track for Sessions"
+        },
+        {
+          "info": {
+            "name": "Add/Update Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/session/upsert",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add/Update Session"
+        },
+        {
+          "info": {
+            "name": "List Sessions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/analytics/session/session-info",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Sessions"
+        },
+        {
+          "info": {
+            "name": "List Session Registrations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/analytics/session/register",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Session Registrations"
+        },
+        {
+          "info": {
+            "name": "List Session Attendance Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/analytics/session/attendee",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Session Attendance Details"
+        },
+        {
+          "info": {
+            "name": "Delist Session",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/session/delete",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delist Session"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

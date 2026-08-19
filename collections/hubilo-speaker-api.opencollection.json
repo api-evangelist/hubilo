@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hubilo (Virtual PRO) Public Event Speaker API",
+    "version": "1.2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Speaker",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add/Update Speaker",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/speaker/upsert",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add/Update Speaker"
+        },
+        {
+          "info": {
+            "name": "List Speakers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/speaker/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "List Speakers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,70 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hubilo (Virtual PRO) Public Event Upload Media API",
+    "version": "1.2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Upload Media",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Pre-Signed URL",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/media/get-signed-url",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get Pre-Signed URL"
+        },
+        {
+          "info": {
+            "name": "Upload Media Acknowledgment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/media/set-acknowledgement",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Upload Media Acknowledgment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

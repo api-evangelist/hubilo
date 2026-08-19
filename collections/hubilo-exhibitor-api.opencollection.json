@@ -1,0 +1,173 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Hubilo (Virtual PRO) Public Event Exhibitor API",
+    "version": "1.2"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Exhibitor",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Exhibitor Booth Category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/category/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "Exhibitor Booth Category"
+        },
+        {
+          "info": {
+            "name": "Exhibitor Booths",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/list",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "Exhibitor Booths"
+        },
+        {
+          "info": {
+            "name": "Booth Analtyics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/analytics",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ]
+          },
+          "docs": "Booth Analtyics"
+        },
+        {
+          "info": {
+            "name": "Add Virtual Exhibitor Booth",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/add",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add Virtual Exhibitor Booth"
+        },
+        {
+          "info": {
+            "name": "Update Exhibitor Booth",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/update",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Exhibitor Booth"
+        },
+        {
+          "info": {
+            "name": "Delist Exhibitor Booth",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/delete",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Delist Exhibitor Booth"
+        },
+        {
+          "info": {
+            "name": "Remove Booth Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.hubilo.com/api/:apiVersion/integration/booth/member/delete",
+            "params": [
+              {
+                "name": "apiVersion",
+                "value": "",
+                "type": "path",
+                "description": "API version segment (e.g. v1)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove Booth Member"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

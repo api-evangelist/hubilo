@@ -1,0 +1,700 @@
+{
+  "item": [
+    {
+      "id": "5b50eacf-1ba8-45d6-b1fd-34cb3ef4a652",
+      "name": "Speaker",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "61741f11-4e66-4e48-8c04-8466c1a72384",
+          "name": "Add/Update Speaker",
+          "request": {
+            "name": "Add/Update Speaker",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "speaker",
+                "upsert"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"eventId\": \"3713\",\n  \"operationType\": \"CREATE\",\n  \"firstName\": \"firstname\",\n  \"lastName\": \"lastname\",\n  \"email\": \"email@domain.com\",\n  \"phone\": \"9999999999\",\n  \"city\": \"Kochi\",\n  \"state\": \"Kerala\",\n  \"country\": \"India\",\n  \"company\": \"company name\",\n  \"title\": \"designation name\",\n  \"memberGroupId\": [\n    \"5ff59327d9f03b050f41bb06\"\n  ],\n  \"facebookUrl\": \"www.facebook.com/\",\n  \"twitterUrl\": \"www.twitter.com/\",\n  \"profileImageURL\": \"\",\n  \"whatsappNumber\": \"7777777777\",\n  \"linkedinUrl\": \"www.linkedin.com/\",\n  \"instagramUrl\": \"www.instagram.com/\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "58052e1d-9cef-45b6-b06f-f6f8563226c3",
+              "name": "Add Speaker Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"3713\",\n  \"operationType\": \"CREATE\",\n  \"firstName\": \"firstname\",\n  \"lastName\": \"lastname\",\n  \"email\": \"email@domain.com\",\n  \"phone\": \"9999999999\",\n  \"city\": \"Kochi\",\n  \"state\": \"Kerala\",\n  \"country\": \"India\",\n  \"company\": \"company name\",\n  \"title\": \"designation name\",\n  \"memberGroupId\": [\n    \"5ff59327d9f03b050f41bb06\"\n  ],\n  \"facebookUrl\": \"www.facebook.com/\",\n  \"twitterUrl\": \"www.twitter.com/\",\n  \"profileImageURL\": \"\",\n  \"whatsappNumber\": \"7777777777\",\n  \"linkedinUrl\": \"www.linkedin.com/\",\n  \"instagramUrl\": \"www.instagram.com/\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"speakerId\": 13803\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da70385f-0ae0-4d3b-bff7-ff24f5b9b7f5",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"3713\",\n  \"operationType\": \"CREATE\",\n  \"firstName\": \"firstname\",\n  \"lastName\": \"lastname\",\n  \"email\": \"email@domain.com\",\n  \"phone\": \"9999999999\",\n  \"city\": \"Kochi\",\n  \"state\": \"Kerala\",\n  \"country\": \"India\",\n  \"company\": \"company name\",\n  \"title\": \"designation name\",\n  \"memberGroupId\": [\n    \"5ff59327d9f03b050f41bb06\"\n  ],\n  \"facebookUrl\": \"www.facebook.com/\",\n  \"twitterUrl\": \"www.twitter.com/\",\n  \"profileImageURL\": \"\",\n  \"whatsappNumber\": \"7777777777\",\n  \"linkedinUrl\": \"www.linkedin.com/\",\n  \"instagramUrl\": \"www.instagram.com/\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f1d5892e-8d49-46ad-ac9d-b3351837d71d",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"3713\",\n  \"operationType\": \"CREATE\",\n  \"firstName\": \"firstname\",\n  \"lastName\": \"lastname\",\n  \"email\": \"email@domain.com\",\n  \"phone\": \"9999999999\",\n  \"city\": \"Kochi\",\n  \"state\": \"Kerala\",\n  \"country\": \"India\",\n  \"company\": \"company name\",\n  \"title\": \"designation name\",\n  \"memberGroupId\": [\n    \"5ff59327d9f03b050f41bb06\"\n  ],\n  \"facebookUrl\": \"www.facebook.com/\",\n  \"twitterUrl\": \"www.twitter.com/\",\n  \"profileImageURL\": \"\",\n  \"whatsappNumber\": \"7777777777\",\n  \"linkedinUrl\": \"www.linkedin.com/\",\n  \"instagramUrl\": \"www.instagram.com/\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "74c8be20-9c45-4628-a0b7-e64b304330cf",
+              "name": "Too many requests — rate limit exceeded (20 req/s per organizer)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"3713\",\n  \"operationType\": \"CREATE\",\n  \"firstName\": \"firstname\",\n  \"lastName\": \"lastname\",\n  \"email\": \"email@domain.com\",\n  \"phone\": \"9999999999\",\n  \"city\": \"Kochi\",\n  \"state\": \"Kerala\",\n  \"country\": \"India\",\n  \"company\": \"company name\",\n  \"title\": \"designation name\",\n  \"memberGroupId\": [\n    \"5ff59327d9f03b050f41bb06\"\n  ],\n  \"facebookUrl\": \"www.facebook.com/\",\n  \"twitterUrl\": \"www.twitter.com/\",\n  \"profileImageURL\": \"\",\n  \"whatsappNumber\": \"7777777777\",\n  \"linkedinUrl\": \"www.linkedin.com/\",\n  \"instagramUrl\": \"www.instagram.com/\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f8d92d3b-1b1f-450c-864b-a9a6b62411a6",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "upsert"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"eventId\": \"3713\",\n  \"operationType\": \"CREATE\",\n  \"firstName\": \"firstname\",\n  \"lastName\": \"lastname\",\n  \"email\": \"email@domain.com\",\n  \"phone\": \"9999999999\",\n  \"city\": \"Kochi\",\n  \"state\": \"Kerala\",\n  \"country\": \"India\",\n  \"company\": \"company name\",\n  \"title\": \"designation name\",\n  \"memberGroupId\": [\n    \"5ff59327d9f03b050f41bb06\"\n  ],\n  \"facebookUrl\": \"www.facebook.com/\",\n  \"twitterUrl\": \"www.twitter.com/\",\n  \"profileImageURL\": \"\",\n  \"whatsappNumber\": \"7777777777\",\n  \"linkedinUrl\": \"www.linkedin.com/\",\n  \"instagramUrl\": \"www.instagram.com/\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "501ec783-f95c-4b52-9dae-47812749ff78",
+          "name": "List Speakers",
+          "request": {
+            "name": "List Speakers",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                ":apiVersion",
+                "integration",
+                "speaker",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "v1",
+                  "key": "apiVersion",
+                  "description": "(Required) API version segment (e.g. v1)."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83708af5-a68c-479e-8913-ef4be8dd4a1f",
+              "name": "Success Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 200,\n  \"data\": {\n    \"data\": [\n      {\n        \"hubiloSpeakerId\": 24220,\n        \"clientSpeakerId\": \"\",\n        \"speakerName\": \"Hyb P\",\n        \"email\": \"hybspekkk@uih.com\",\n        \"fbUrl\": \"www.facebook.com/\",\n        \"linkedinUrl\": \"www.linkedin.com/\",\n        \"twitterUrl\": \"www.twitter.com/\",\n        \"instagramUrl\": \"www.instagram.com/\",\n        \"profileImg\": \"\",\n        \"shortDescription\": \"\",\n        \"longDescription\": \"\",\n        \"multipleFile\": \"\",\n        \"presentation\": \"\",\n        \"presentationFileName\": \"\",\n        \"createTimeMilli\": \"1644219963000\",\n        \"updateTimeMilli\": \"1644220015000\",\n        \"updatedAt\": \"2022-02-07T07:46:03.000Z\",\n        \"createdAt\": \"2022-02-07T07:46:03.000Z\",\n        \"eventId\": 34970,\n        \"isRating\": 0,\n        \"categoryId\": null,\n        \"categoryName\": \"\",\n        \"sessionDetails\": []\n      },\n      {\n        \"hubiloSpeakerId\": 24340,\n        \"clientSpeakerId\": \"1234\",\n        \"speakerName\": \"firstname lastname\",\n        \"email\": \"email@domain.com\",\n        \"fbUrl\": \"www.facebook.com/\",\n        \"linkedinUrl\": \"www.linkedin.com/\",\n        \"twitterUrl\": \"www.twitter.com/\",\n        \"instagramUrl\": \"www.instagram.com/\",\n        \"profileImg\": \"\",\n        \"shortDescription\": \"\",\n        \"longDescription\": \"\",\n        \"multipleFile\": \"\",\n        \"presentation\": \"\",\n        \"presentationFileName\": \"\",\n        \"createTimeMilli\": \"1644228432086\",\n        \"updateTimeMilli\": \"1644228432086\",\n        \"updatedAt\": \"2022-02-07T10:07:12.000Z\",\n        \"createdAt\": \"2022-02-07T10:07:12.000Z\",\n        \"eventId\": 34970,\n        \"isRating\": 0,\n        \"categoryId\": null,\n        \"categoryName\": \"\",\n        \"sessionDetails\": [],\n        \"customFieldData\": [\n          {\n            \"id\": \"625697d6d9f03b1ee55ef1b7\",\n            \"name\": \"\",\n            \"value\": \"additonal field\",\n            \"type\": \"\"\n          }\n        ],\n        \"group\": [\n          {\n            \"groupName\": \"Speaker\",\n            \"groupId\": \"80d2e3344b75054121615c31\",\n            \"groupType\": \"\"\n          }\n        ],\n        \"attendanceType\": \"on-site\",\n        \"qrCode\": \"asf765fa57656g5a765g7as\"\n      }\n    ],\n    \"currentPage\": 0,\n    \"totalPages\": 1\n  },\n  \"message\": \"\",\n  \"flag\": 0,\n  \"eventLastUpdatedAt\": 0\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0d8dfaa0-59af-4e60-acbc-6ed1acff1206",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fde26ba1-6375-413b-b139-85fbd761564a",
+              "name": "Unauthorized — missing or invalid access token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a26e7e01-0e23-4ced-ae8b-e1663fac6467",
+              "name": "Too many requests — rate limit exceeded (20 req/s per organizer)",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e4a37bd3-d3b9-4e62-95e8-c9b58e0eb136",
+              "name": "Internal server error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    ":apiVersion",
+                    "integration",
+                    "speaker",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "v1",
+                      "key": "apiVersion",
+                      "description": "(Required) API version segment (e.g. v1)."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.hubilo.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7611c93a-a7be-40ac-94e1-a27ca210eb06",
+    "name": "Hubilo (Virtual PRO) Public Event Speaker API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Hubilo Public APIs (branded Virtual PRO) for managing virtual, hybrid, and in-person events: events, sessions/agenda, speakers, users/attendees, member groups, exhibitor booths, organiser profile, and media upload. Derived faithfully from the provider's published Postman collection (Virtual Pro Public APIs v1.2). Rate limit: 20 requests/second at the organizer level (combined across all APIs).\n\nContact Support:\n Name: Hubilo Developer Support",
+      "type": "text/plain"
+    }
+  }
+}
