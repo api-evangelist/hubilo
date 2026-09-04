@@ -24,15 +24,18 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - rate-limits
+  - security
+  - {url: 'https://hubilo.com/', status: 301, note: 'declared website redirects to https://www.virtualpro.com/ — a different registrable domain (hubilo.com -> virtualpro.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-03'
   method: derived
 image: https://framerusercontent.com/images/WwfBR1oRs750Jqr5sx6xqvIOc.png
 x-type: company
@@ -207,8 +210,9 @@ common:
   url: conformance/hubilo-conformance.yml
 - type: Webhooks
   url: asyncapi/hubilo-webhooks.yml
-- type: MCPServer
+- type: X-MCPServerCandidate
   url: mcp/hubilo-mcp.yml
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type surfaces with a server that does not exist.'
 - type: AgentSkill
   url: skills/_index.yml
 - type: LLMsTxt
