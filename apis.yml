@@ -117,6 +117,8 @@ apis:
   humanURL: https://developer.hubilo.com/
   baseURL: https://api.hubilo.com
   tags:
+  - Sessions
+  tags_raw:
   - Session
   properties:
   - type: OpenAPI
