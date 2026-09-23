@@ -1,13 +1,7 @@
 {
   "provider": "hubilo",
   "sources": [
-    "hubilo-event-api-openapi.yml",
-    "hubilo-exhibitor-api-openapi.yml",
-    "hubilo-organiser-api-openapi.yml",
-    "hubilo-session-api-openapi.yml",
-    "hubilo-speaker-api-openapi.yml",
-    "hubilo-upload-media-api-openapi.yml",
-    "hubilo-user-api-openapi.yml"
+    "_original/hubilo-openapi.yml"
   ],
   "outputs": [
     "hubilo-event-api-openapi.yml",
@@ -21,6 +15,18 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "hubilo-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "hubilo-event-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hubilo-exhibitor-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hubilo-organiser-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hubilo-session-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hubilo-speaker-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hubilo-upload-media-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "hubilo-user-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

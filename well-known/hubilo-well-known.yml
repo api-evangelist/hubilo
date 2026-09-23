@@ -1,17 +1,24 @@
 generated: '2026-07-19'
 method: searched
 host: https://api.hubilo.com
-note: All standard discovery documents probed and returned 404 (empty is valid data). The
-  hubilo.com /.well-known/security.txt path returns the Framer marketing page (soft-200,
-  not a real RFC 9116 security.txt), so it is not recorded as a hit.
-documents:
-- path: /.well-known/security.txt
-  status: 404
-- path: /.well-known/openid-configuration
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  status: 404
-- path: /.well-known/api-catalog
-  status: 404
-- path: /.well-known/ai-plugin.json
-  status: 404
+note: All standard discovery documents probed and returned 404 (empty is valid data). The hubilo.com /.well-known/security.txt
+  path returns the Framer marketing page (soft-200, not a real RFC 9116 security.txt), so it is not recorded
+  as a hit.
+hosts:
+- host: https://api.hubilo.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
